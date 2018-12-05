@@ -5,6 +5,7 @@ set nocompatible
 syntax on
 filetype plugin indent on
 set rtp+=~/.vim/bundle/Vundle.vim
+set laststatus=2
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim' "vundle manager
@@ -19,12 +20,44 @@ Plugin 'justmao945/vim-clang' "c++ autocompletion
 Plugin 'vim-syntastic/syntastic' "formatting rules for different language
 Plugin 'joshdick/onedark.vim' 
 Plugin 'scrooloose/nerdtree' 
+" Git Trio plugins to do anything you like
+Plugin 'tpope/vim-fugitive' 
+Plugin 'itchyny/vim-gitbranch' 
+Plugin 'airblade/vim-gitgutter' 
 " Open NERDTree on opening
-autocmd VimEnter * NERDTree 
-" Jump to the main window.
-autocmd VimEnter * wincmd p
-let g:NERDTreeQuitOnOpen = 1
+" map nerdtree to control n
+nmap <C-v> :NERDTreeToggle<CR>
+silent! map <C-n> :NERDTreeFind<CR>
+
+let g:NERDTreeMapActivateNode="<F3>"
+let g:NERDTreeMapPreview="<F4>"
+"let g:NERDTreeQuitOnOpen = 1
+
+" map tagbar toggle to control b 
+nmap <C-b> :TagbarToggle<CR>
+"let tagbar change highlightedtag change faster
+"silent! map <C-1> :NERDTreeFind<CR>
 let g:onedark_terminal_italics = 1
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'git:','gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+"let gitgutter stage hunkes/chunks and run between them
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterUndoHunk
+"let g:gitgutter_highlight_lines = 1
+let g:gitgutter_realtime = 1
+let g:gitgutter_updatetime = 250
+"hmmm
+" use onedark colorscheme
 colorscheme onedark
 set number "line number
 set statusline+=%#warningmsg#
@@ -37,3 +70,4 @@ set statusline+=%#warningmsg#
     let g:syntastic_check_on_wq = 0
 
 call vundle#end()
+
