@@ -32,6 +32,8 @@ silent! map <C-n> :NERDTreeFind<CR>
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 "let g:NERDTreeQuitOnOpen = 1
+"nertree should cd when used
+let g:NERDTreeChDirMode = 2
 
 " map tagbar toggle to control b 
 nmap <C-b> :TagbarToggle<CR>
