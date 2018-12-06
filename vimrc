@@ -24,6 +24,16 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive' 
 Plugin 'itchyny/vim-gitbranch' 
 Plugin 'airblade/vim-gitgutter' 
+Plugin 'lervag/vimtex' 
+Plugin 'Shougo/neosnippet.vim' 
+Plugin 'Shougo/neosnippet-snippets'
+"snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+  " Optional:
+Plugin 'honza/vim-snippets'
 " Open NERDTree on opening
 " map nerdtree to control n
 nmap <C-v> :NERDTreeToggle<CR>
