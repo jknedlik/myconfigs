@@ -31,6 +31,7 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'wincent/command-t'
 
   " Optional:
 Plugin 'honza/vim-snippets'
