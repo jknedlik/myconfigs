@@ -31,9 +31,10 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'wincent/command-t'
-
-  " Optional:
+Plugin 'mileszs/ack.vim' " ackvim and ag as search engine install the_silver_searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 Plugin 'honza/vim-snippets'
 " Open NERDTree on opening
 " map nerdtree to control n
