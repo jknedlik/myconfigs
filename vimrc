@@ -36,6 +36,8 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 Plugin 'honza/vim-snippets'
+Plugin 'jelera/vim-javascript-syntax' 
+Plugin 'leafgarland/typescript-vim'
 " Open NERDTree on opening
 " map nerdtree to control n
 nmap <C-v> :NERDTreeToggle<CR>
