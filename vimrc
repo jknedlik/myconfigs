@@ -17,6 +17,8 @@ Plugin 'vim-scripts/Cpp11-Syntax-Support'
 Plugin 'majutsushi/tagbar' "tagbar not working
 Plugin 'universal-ctags/ctags'
 Plugin 'justmao945/vim-clang' "c++ autocompletion
+Plugin 'kana/vim-operator-user'
+Plugin 'rhysd/vim-clang-format' "c++ clang format 
 Plugin 'vim-syntastic/syntastic' "formatting rules for different language
 Plugin 'joshdick/onedark.vim' 
 Plugin 'scrooloose/nerdtree' 
@@ -48,6 +50,16 @@ let g:NERDTreeMapPreview="<F4>"
 "let g:NERDTreeQuitOnOpen = 1
 "nertree should cd when used
 let g:NERDTreeChDirMode = 2
+"clang format
+autocmd FileType c ClangFormatAutoEnable
+autocmd FileType cpp ClangFormatAutoEnable
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+let g:ClangFormatAutoEnable = 1
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 " map tagbar toggle to control b 
 nmap <C-b> :TagbarToggle<CR>
