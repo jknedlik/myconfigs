@@ -66,7 +66,7 @@ let g:clang_format#style_options = {
             \ "AlwaysBreakTemplateDeclarations" : "true",
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Stroustrup",
-            \ "IndentWidth" : "4"}
+            \ "IndentWidth" : "2"}
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
