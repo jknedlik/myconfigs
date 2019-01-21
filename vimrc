@@ -45,6 +45,7 @@ Plugin 'leafgarland/typescript-vim'
 nmap <C-v> :NERDTreeToggle<CR>
 silent! map <C-n> :NERDTreeFind<CR>
 
+let mapleader="-"
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 "let g:NERDTreeQuitOnOpen = 1
