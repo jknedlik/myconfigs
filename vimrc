@@ -40,12 +40,15 @@ endif
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
+"vimtex auto format
+let g:vimtex_format_enabled=1
 " Open NERDTree on opening
 " map nerdtree to control n
 nmap <C-v> :NERDTreeToggle<CR>
 silent! map <C-n> :NERDTreeFind<CR>
 
 let mapleader="-"
+let maplocalleader="\\"
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 "let g:NERDTreeQuitOnOpen = 1
