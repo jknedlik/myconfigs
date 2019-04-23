@@ -41,7 +41,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
 "vimtex auto format
-let g:vimtex_format_enabled=1
+let g:vimtex_format_enabled=0
 " Open NERDTree on opening
 " map nerdtree to control n
 nmap <C-v> :NERDTreeToggle<CR>
@@ -100,6 +100,8 @@ let g:gitgutter_updatetime = 250
 "hmmm
 " use onedark colorscheme
 colorscheme onedark
+"Set Terminal to allow for transparency
+hi Normal guibg=NONE ctermbg=NONE
 set number "line number
 set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
