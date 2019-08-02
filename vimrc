@@ -22,6 +22,7 @@ Plugin 'rhysd/vim-clang-format' "c++ clang format
 Plugin 'vim-syntastic/syntastic' "formatting rules for different language
 Plugin 'joshdick/onedark.vim' 
 Plugin 'scrooloose/nerdtree' 
+Plugin 'w0rp/ale'
 " Git Trio plugins to do anything you like
 Plugin 'tpope/vim-fugitive' 
 Plugin 'itchyny/vim-gitbranch' 
