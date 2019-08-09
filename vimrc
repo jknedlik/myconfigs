@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set laststatus=2
 call vundle#begin()
 
+Plugin 'neomutt/neomutt.vim'
 Plugin 'VundleVim/Vundle.vim' "vundle manager
 Plugin 'itchyny/lightline.vim'  "bottom line with information
 Plugin 'ervandew/supertab' "completition with tab
@@ -99,6 +100,11 @@ nmap <Leader>hr <Plug>GitGutterUndoHunk
 let g:gitgutter_realtime = 1
 let g:gitgutter_updatetime = 250
 "hmmm
+" easy movement in vim
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 " use onedark colorscheme
 colorscheme onedark
 "Set Terminal to allow for transparency
@@ -118,4 +124,3 @@ set statusline+=%#warningmsg#
 			    \ 'backward_warning.h'
 			    \ ] } 
 call vundle#end()
-
