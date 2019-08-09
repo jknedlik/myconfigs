@@ -1,0 +1,22 @@
+# general sway config
+#font
+font Source Code Pro 9
+smart_gaps on
+gaps outer 15
+gaps inner 30
+
+default_border none
+
+output "*" background $config_dir/background.jpg stretch
+#keyboard layout and switching
+
+input 1241:323:MD600_RGB {
+	xkb_layout us,de
+	xkb_variant ,nodeadkeys
+	xkb_options grp:alt_shift_toggle
+}
+
+#use swaybar
+bar {
+	swaybar_command waybar
+}

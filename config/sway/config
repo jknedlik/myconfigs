@@ -1,0 +1,19 @@
+#sway config file
+#
+
+# set the configuration directory to include config files
+set $config_dir $HOME/.config/sway/config.d
+#key configuration
+include $config_dir/metakey_bindings
+#general configuration
+include $config_dir/general_config
+#machine specific configuration (monitors, special keys etc)
+include $config_dir/machine_specific
+#move and focus bindings
+include $config_dir/move_bindings
+#resize bindigs
+include $config_dir/resize_bindings
+
+
+
+
