@@ -8,6 +8,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set laststatus=2
 call vundle#begin()
 
+Plugin 'vim-python/python-syntax'
+Plugin 'vim-scripts/slimv.vim'
 Plugin 'neomutt/neomutt.vim'
 Plugin 'VundleVim/Vundle.vim' "vundle manager
 Plugin 'itchyny/lightline.vim'  "bottom line with information
@@ -42,6 +44,8 @@ endif
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
+"python highlighting including fstrings
+let g:python_highlight_all = 1
 "vimtex auto format
 let g:vimtex_format_enabled=0
 " Open NERDTree on opening
@@ -123,4 +127,18 @@ set statusline+=%#warningmsg#
 			    \ '\mpossible unwanted space at "{"',
 			    \ 'backward_warning.h'
 			    \ ] } 
+:set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+hi CursorLineNR cterm=bold
+augroup CLNRSet
+    autocmd! ColorScheme * hi CursorLineNR cterm=bold
+augroup END
+set cursorline
+"highlight LineNr ctermfg=gray
+"hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=Yellow
 call vundle#end()
