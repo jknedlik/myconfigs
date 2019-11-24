@@ -1,0 +1,11 @@
+vim
+zsh
+fzf
+thefuck
+git
+python-dev
+python /.vim/plugged/youcompleteme/install.py
+vim-plug
+zsh-autosuggestions
+zsh-syntax-highlighting
+# symbolic link in ZSH/custom/plugins/ for zsh-autosuggestions and zsh-syntax-hightlighting
