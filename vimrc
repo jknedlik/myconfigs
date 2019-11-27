@@ -44,13 +44,15 @@ endif
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
+Plugin 'coddingtonbear/neomake-platformio'
+Plugin 'aars/syntastic-platformio'
 "python highlighting including fstrings
 let g:python_highlight_all = 1
 "vimtex auto format
 let g:vimtex_format_enabled=0
 " Open NERDTree on opening
 " map nerdtree to control n
-nmap <C-v> :NERDTreeToggle<CR>
+nmap <C-c> :Lex<CR>
 silent! map <C-n> :NERDTreeFind<CR>
 
 let mapleader="-"
