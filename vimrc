@@ -46,6 +46,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'coddingtonbear/neomake-platformio'
 Plugin 'aars/syntastic-platformio'
+
 "python highlighting including fstrings
 let g:python_highlight_all = 1
 "vimtex auto format
@@ -97,6 +98,19 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+
+
+"jannis fun way to move in vim/ end insert mode
+let NERDTreeMapJumpLastChild='\J'
+let NERDTreeMapJumpFirstChild='\K'
+
+nnoremap J :tabp<CR>
+nnoremap K :tabn<CR>
+
+inoremap kj <esc>
+inoremap jk <esc>
+
+
 "let gitgutter stage hunkes/chunks and run between them
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
