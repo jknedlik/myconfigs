@@ -165,4 +165,5 @@ alias virgo="ssh virgo"
 alias kronos="ssh kronos"
 export WLR_DRM_DEVICES=/dev/dri/card0
 export PATH=$PATH:/$HOME/.scripts
+export LC_ALL="en_US.UTF-8" 
 #export QT_SCALE_FACTOR=2
