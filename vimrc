@@ -7,6 +7,7 @@ filetype plugin indent on
 set rtp+=~/.vim/bundle/Vundle.vim
 set laststatus=2
 call vundle#begin()
+set encoding=utf-8
 
 Plugin 'vim-python/python-syntax'
 Plugin 'vim-scripts/slimv.vim'

@@ -8,3 +8,7 @@ ln -s $PWD/vimrc ~/.vimrc
 
 #install vundle plugins
 vim +PluginInstall +qall
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#instal antigen for zsh
+curl -L git.io/antigen > $HOME/.antigen.zsh
+

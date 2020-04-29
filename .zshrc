@@ -13,6 +13,8 @@ fi
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+#antigen stuff
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -88,8 +90,8 @@ plugins=(
 	tmux
 	vagrant
 	vi-mode 
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+#	zsh-autosuggestions
+#	zsh-syntax-highlighting
 	fzf
 )
 
@@ -99,7 +101,7 @@ plugins=(
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 #bindkey '^ ' autosuggest-accept
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 
 # Preferred editor for local and remote sessions
@@ -156,3 +158,11 @@ if [[ $USER = "jknedlik" || $(hostname) = "jk-box" ]]; then
 fi
 
 bindkey '^ ' autosuggest-accept
+export MOZ_ENABLE_WAYLAND=1
+export QT_WAYLAND_FORCE_DPI=physical
+export XDG_SESSION_TYPE=wayland
+alias virgo="ssh virgo"
+alias kronos="ssh kronos"
+export WLR_DRM_DEVICES=/dev/dri/card0
+export PATH=$PATH:/$HOME/.scripts
+#export QT_SCALE_FACTOR=2
