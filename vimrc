@@ -10,6 +10,7 @@ call vundle#begin()
 set encoding=utf-8
 
 Plugin 'vim-python/python-syntax'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-scripts/slimv.vim'
 Plugin 'neomutt/neomutt.vim'
 Plugin 'VundleVim/Vundle.vim' "vundle manager
