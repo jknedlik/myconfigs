@@ -5,5 +5,5 @@
 output HDMI-A-1 pos 0 0 res 3840 2160 
 #scale 1.5
 #output DP-3 disable
-bindsym $mod+Shift+t exec audiotogg.rb
+bindsym $mod+Shift+t exec cd ~/.scripts && audiotogg.rb
 font Source Code Pro 19
