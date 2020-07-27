@@ -114,10 +114,10 @@ inoremap jk <esc>
 
 
 "let gitgutter stage hunkes/chunks and run between them
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
-nmap <Leader>ha <Plug>GitGutterStageHunk
-nmap <Leader>hr <Plug>GitGutterUndoHunk
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+nmap <Leader>ha <Plug>(GitGutterStageHunk)
+nmap <Leader>hr <Plug>(GitGutterUndoHunk)
 "let g:gitgutter_highlight_lines = 1
 let g:gitgutter_realtime = 1
 let g:gitgutter_updatetime = 250
