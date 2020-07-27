@@ -11,6 +11,9 @@ bindsym $mod+Return exec termite
 bindsym $mod+x exec killall -SIGUSR1 waybar
 # dlauncher
 bindsym $mod+d exec termite --name=launcher -e "bash -c 'find /usr/share/applications -name *.desktop | xargs basename -s .desktop -a | fzf | xargs -r swaymsg -t command exec gtk-launch'"
+# qtbrowser
+bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" qutebrowser
+
 
 # kill focused window
 bindsym $mod+q kill
@@ -45,3 +48,5 @@ bindsym $mod+Shift+r reload
 # Exit sway (logs you out of your Wayland session)
 #
 bindsym $mod+Shift+q exit
+bindsym $mod+p exec termite --class fzf-pass -e "bash -c fzf-pass"
+for_window [app_id="fzf-pass"] focus, floating enabled, border pixel 1
