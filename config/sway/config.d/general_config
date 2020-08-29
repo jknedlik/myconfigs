@@ -1,9 +1,9 @@
 # general sway config
 #font
 font Source Code Pro 9
-smart_gaps on
-gaps outer 15
-gaps inner 30
+#smart_gaps on
+#gaps outer 15
+#gaps inner 30
 
 default_border none
 

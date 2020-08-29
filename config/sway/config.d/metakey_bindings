@@ -14,7 +14,8 @@ bindsym $mod+d exec termite --name=launcher -e "bash -c 'find /usr/share/applica
 # qtbrowser
 bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" qutebrowser
 
-
+# test termite
+bindsym $mod+c exec termite -d "$(termitewin.sh)"
 # kill focused window
 bindsym $mod+q kill
 
@@ -48,5 +49,12 @@ bindsym $mod+Shift+r reload
 # Exit sway (logs you out of your Wayland session)
 #
 bindsym $mod+Shift+q exit
-bindsym $mod+p exec termite --class fzf-pass -e "bash -c fzf-pass"
-for_window [app_id="fzf-pass"] focus, floating enabled, border pixel 1
+#bindsym $mod+p exec termite --class fzf-launcher --title "FZF pass" -e "sh -c fzf-pass"
+#bindsym $mod+p exec "sudo /home/jknedlik/.scripts/swapusb.sh"
+bindsym $mod+p exec sudo /home/jknedlik/.scripts/swapusb.sh >/tmp/swapusb.log
+bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/startvm.sh >/tmp/startvm.log
+#wofi conf
+bindsym $mod+y exec wofi
+bindsym $mod+Shift+y exec wofi --show run
+#
+for_window [class="fzf-pass"] focus, floating enabled, border pixel 1

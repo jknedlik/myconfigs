@@ -2,13 +2,14 @@
 #
 
 # set the configuration directory to include config files
+set $host_dir $HOME/.config/sway/host_specifics/
 set $config_dir $HOME/.config/sway/config.d
 #key configuration
 include $config_dir/metakey_bindings
 #general configuration
 include $config_dir/general_config
 #machine specific configuration (monitors, special keys etc)
-include $config_dir/machine_specific
+include $config_dir/`hostname`
 #move and focus bindings
 include $config_dir/move_bindings
 #resize bindigs
