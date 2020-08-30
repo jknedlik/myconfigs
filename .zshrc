@@ -161,7 +161,7 @@ if [[ $USER = "jknedlik" || $(hostname) = "jk-box" ]]; then
   prompt_context () { }
 fi
 
-bindkey '^ ' autosuggest-accept
+#bindkey '^ ' autosuggest-accept
 export MOZ_ENABLE_WAYLAND=1
 #export QT_WAYLAND_FORCE_DPI=physical
 export XDG_SESSION_TYPE=wayland
