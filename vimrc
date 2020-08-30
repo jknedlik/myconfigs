@@ -27,11 +27,11 @@ Plugin 'rhysd/vim-clang-format' "c++ clang format
 Plugin 'vim-syntastic/syntastic' "formatting rules for different language
 Plugin 'joshdick/onedark.vim' 
 Plugin 'scrooloose/nerdtree' 
-"Plugin 'w0rp/ale'
 " Git Trio plugins to do anything you like
 Plugin 'tpope/vim-fugitive' 
 Plugin 'itchyny/vim-gitbranch' 
 Plugin 'airblade/vim-gitgutter' 
+Plugin 'ycm-core/YouCompleteMe' 
 Plugin 'lervag/vimtex' 
 Plugin 'Shougo/neosnippet.vim' 
 Plugin 'Shougo/neosnippet-snippets'
@@ -137,6 +137,9 @@ let g:clang_cpp_options = '-std=c++17 -I.. -I.'
 let g:clang_compilation_database = './build'
 let g:clang_verbose_pmenu = 0
 " enable debug with let g:clang_debug = 3
+" ycm settings
+  let g:ycm_confirm_extra_conf = 0
+  let g:ycm_log_level='debug' 
 
 set number "line number
 set statusline+=%#warningmsg#
@@ -145,6 +148,9 @@ set statusline+=%#warningmsg#
 
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
+    let g:syntastic_enable_signs=1
+    let g:syntastic_error_symbol = '✗'
+    let g:syntastic_warning_symbol = '⚠'
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
     let g:syntastic_quiet_messages = {
