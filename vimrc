@@ -27,7 +27,7 @@ Plugin 'rhysd/vim-clang-format' "c++ clang format
 Plugin 'vim-syntastic/syntastic' "formatting rules for different language
 Plugin 'joshdick/onedark.vim' 
 Plugin 'scrooloose/nerdtree' 
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 " Git Trio plugins to do anything you like
 Plugin 'tpope/vim-fugitive' 
 Plugin 'itchyny/vim-gitbranch' 
@@ -53,6 +53,7 @@ Plugin 'aars/syntastic-platformio'
 let g:python_highlight_all = 1
 "vimtex auto format
 let g:vimtex_format_enabled=0
+let g:tex_flavor='latex'
 " Open NERDTree on opening
 " map nerdtree to control n
 nmap <C-c> :Lex<CR>
@@ -131,6 +132,12 @@ nnoremap <C-l> <C-w>l
 colorscheme onedark
 "Set Terminal to allow for transparency
 hi Normal guibg=NONE ctermbg=NONE
+"Set vim-clang to use
+let g:clang_cpp_options = '-std=c++17 -I.. -I.' 
+let g:clang_compilation_database = './build'
+let g:clang_verbose_pmenu = 0
+" enable debug with let g:clang_debug = 3
+
 set number "line number
 set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
