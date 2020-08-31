@@ -29,7 +29,7 @@ c.url.searchengines = {
 }
 c.tabs.position = "right"
 c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.policy.pages= "always"
+c.colors.webpage.darkmode.policy.page= "always"
 #
 c.colors.statusbar.normal.bg="#121212"
 c.colors.statusbar.normal.fg="#0999d9"
@@ -39,7 +39,6 @@ c.colors.completion.category.bg="#121212"
 c.colors.completion.category.fg="#f5870a"
 c.colors.completion.even.bg="#121212"
 c.colors.completion.fg="#c500d1"
-c.colors.completion.bg="#121212"
 c.colors.completion.odd.bg="#202020"
 c.colors.completion.category.border.top ="#121212"
 c.colors.completion.category.border.bottom="#121212"
