@@ -13,6 +13,8 @@ bindsym $mod+x exec killall -SIGUSR1 waybar
 bindsym $mod+d exec termite --name=launcher -e "bash -c 'find /usr/share/applications -name *.desktop | xargs basename -s .desktop -a | fzf | xargs -r swaymsg -t command exec gtk-launch'"
 # qtbrowser
 bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" qutebrowser
+# grim
+bindsym $mod+g exec grim -t jpeg ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
 
 # test termite
 bindsym $mod+c exec termite -d "$(termitewin.sh)"
