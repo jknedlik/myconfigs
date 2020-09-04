@@ -1,6 +1,6 @@
 {
     "layer": "bottom",
-    "position": "bottom",
+    "position": "right",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
         "modules-right": ["pulseaudio","cpu","memory", "tray","clock"],
@@ -12,24 +12,27 @@
         "spacing": 10
     },
   "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}",
+	"max-length": 3
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format": "{:%H:%M}",
+	"interval": 1
+    },
+    "sway/window":{
+	"rotate": 270
     },
     "pulseaudio": {
         //"scroll-step": 1,
-        "format": "{volume}% {icon}",
+        "format": "{volume}{icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
             "headphones": "",
-            "handsfree": "",
-            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",

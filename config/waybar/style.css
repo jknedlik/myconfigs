@@ -1,0 +1,80 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: 'Droid Sans Mono for Powerline 16';
+    font-size: 109%;
+    min-height: 0;
+}
+
+window#taskbar{
+color:green;
+}
+window#waybar {
+    margin: 10px;
+    padding: 0 5px;
+    border-bottom: 1px solid rgba(197, 0, 209, 0.8);
+    background: rgba(28, 28, 28, 0.8);
+    color: white;
+}
+window#waybar#title{
+    color: green;
+
+
+}
+
+#workspaces button {
+    font-size: 70%;
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    color: #FFFFFF;
+    background:rgba(197, 0, 209, 0.8); 
+}
+
+#mode, #clock, #battery {
+    border-left: 1px solid rgba(197, 0, 209, 0.8);
+    border-right: 1px solid rgba(197, 0, 209, 0.8);
+    padding: 0 10px;
+    margin: 0 5px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock {
+    font-size: 100% ;
+    background:rgba(245, 198, 10, 0.69); 
+}
+
+#battery {
+    background-color: #121212;
+    color: black;
+}
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
