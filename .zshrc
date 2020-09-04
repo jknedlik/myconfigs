@@ -178,5 +178,21 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+autoload -U compinit && compinit
+. /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh
+zstyle ':completion:*' menu select
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#setup easy reusing dirs
+d='dirs -v | head -10'
+1='cd -'
+2='cd -2'
+3='cd -3'
+4='cd -4'
+5='cd -5'
+6='cd -6'
+7='cd -7'
+8='cd -8'
+9='cd -9'
+#setopt autocd autopushd \ pushdignoredups
 #source ~/documents/spack/share/spack/setup-env.sh
