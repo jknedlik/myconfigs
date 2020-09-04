@@ -3,7 +3,7 @@ font = Droid Sans Mono for Powerline 16
 scrollback_lines = 10000
 [colors]
 
-background      = rgba(28, 28, 28,0.9)
+background      = rgba(28, 28, 28,0.80)
 foreground      = #eceff1
 foreground_bold = #eceff1
 cursor          = #eceff1
