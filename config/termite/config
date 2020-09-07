@@ -4,9 +4,9 @@ scrollback_lines = 10000
 [colors]
 
 background      = rgba(28, 28, 28,0.80)
-foreground      = #eceff1
-foreground_bold = #eceff1
-cursor          = #eceff1
+foreground      = #C8B1D1
+foreground_bold = #C8B1D1
+cursor          = white
 #background      = #263238
 
 # black
@@ -19,7 +19,7 @@ color9  = #ffa74d
 
 # green
 color2  = #8bc34a
-color10 = #9ccc65
+color10 = #CF326F
 
 # yellow
 color3  = #ffc107
@@ -27,11 +27,11 @@ color11 = #ffa000
 
 # blue
 color4  = #02557a
-color12 = #189dc6
+color12 = #C618C1
 
 # magenta
 color5  = #e91e63
-color13 = #ad1457
+color13 = #CB2020
 
 # cyan
 color6  = #009688
@@ -39,4 +39,5 @@ color14 = #26a69a
 
 # white
 color7  = #cfd8dc
-color15 = #eceff1
+color7 = #CC7FE1
+color15 = #CC7FE1
