@@ -12,12 +12,13 @@
         "spacing": 10
     },
   "cpu": {
-        "format": "{usage}",
+        "format": " {usage}",
         "tooltip": false
     },
     "memory": {
-        "format": "{}",
-	"max-length": 3
+        "format": " {}",
+	"max-length": 3,
+	"interval": 5
     },
     "clock": {
         "format": "{:%H:%M}",
@@ -28,7 +29,7 @@
     },
     "pulseaudio": {
         //"scroll-step": 1,
-        "format": "{volume}{icon}",
+        "format": "{icon} {volume}",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
