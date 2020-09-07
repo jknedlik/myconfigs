@@ -172,7 +172,8 @@ export PATH=$PATH:/$HOME/.scripts
 export LC_ALL="en_US.UTF-8" 
 #export QT_SCALE_FACTOR=2
 alias r=ranger
-
+alias rcd="source ranger"
+alias gs="git status"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -181,6 +182,12 @@ fi
 autoload -U compinit && compinit
 . /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 zstyle ':completion:*' menu select
+typeset -g POWERLEVEL10K_TIME_FOREGROUND=238
+
+typeset -g POWERLEVEL10K_DIR_HOME_SUBFOLDER_BACKGROUND='111'
+typeset -g POWERLEVEL10K_DIR_ETC_BACKGROUND='111'
+typeset -g POWERLEVEL10K_DIR_DEFAULT_BACKGROUND='111' 
+typeset -g POWERLEVEL10K_DIR_HOME_BACKGROUND='111'
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #setup easy reusing dirs
