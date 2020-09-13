@@ -9,6 +9,8 @@ set laststatus=2
 call vundle#begin()
 set encoding=utf-8
 
+
+Plugin 'tikhomirov/vim-glsl'
 Plugin 'vim-python/python-syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-scripts/slimv.vim'
@@ -16,12 +18,12 @@ Plugin 'neomutt/neomutt.vim'
 Plugin 'VundleVim/Vundle.vim' "vundle manager
 Plugin 'itchyny/lightline.vim'  "bottom line with information
 Plugin 'ervandew/supertab' "completition with tab
-Plugin 'vim-scripts/OmniCppComplete' "auto complete
+"#Plugin 'vim-scripts/OmniCppComplete' "auto complete
 Plugin 'octol/vim-cpp-enhanced-highlight' "syntax highlighting
 Plugin 'vim-scripts/Cpp11-Syntax-Support'
 Plugin 'majutsushi/tagbar' "tagbar not working
 Plugin 'universal-ctags/ctags'
-Plugin 'justmao945/vim-clang' "c++ autocompletion
+"Plugin 'justmao945/vim-clang' "c++ autocompletion
 Plugin 'kana/vim-operator-user'
 Plugin 'rhysd/vim-clang-format' "c++ clang format 
 Plugin 'vim-syntastic/syntastic' "formatting rules for different language
@@ -141,6 +143,8 @@ let g:clang_verbose_pmenu = 0
   let g:ycm_confirm_extra_conf = 0
   let g:ycm_log_level='debug' 
 
+" glsl shader 
+autocmd! BufNewFile,BufRead *.vs,*.fs,*.vert,*.frag set ft=glsl
 set number "line number
 set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
