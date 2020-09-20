@@ -1,0 +1,12 @@
+anchor=top-right
+font=Droid Sans Mono for Powerline 16
+#default-timeout=5000
+group-by=category
+background-color=#E0090988
+height=200
+width=200
+margin=0,0,0
+padding=10,20
+border-radius=3
+border-size=0
+default-timeout=3600000
