@@ -174,11 +174,13 @@ export LC_ALL="en_US.UTF-8"
 alias r=ranger
 alias rcd="source ranger"
 alias gs="git status"
+export nfsend="notify-send '%s -%m' -c im.received && paplay /usr/share/sounds/gnome/default/alerts/sonar.ogg"
+alias signal="scli -n -e vim -s -f -N \"$nfsend\""
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 autoload -U compinit && compinit
 . /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 zstyle ':completion:*' menu select
