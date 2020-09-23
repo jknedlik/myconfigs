@@ -172,6 +172,7 @@ export PATH=$PATH:/$HOME/.scripts
 export LC_ALL="en_US.UTF-8" 
 #export QT_SCALE_FACTOR=2
 alias r=ranger
+alias v=vagrant
 alias rcd="source ranger"
 alias gs="git status"
 export nfsend="notify-send '%s -%m' -c im.received && paplay /usr/share/sounds/gnome/default/alerts/sonar.ogg"
