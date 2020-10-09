@@ -8,6 +8,7 @@ end
 
 sinkInputs=`pactl list short sink-inputs`.split("\n")
 currentSink=sinkInputs[0].split(" ")[1]
+  Process.spawn("pactl set-default-sink #{list[(list.index(currentSink)+1)%list.length]}")
 for x in sinkInputs do
   puts( x, currentSink)
   Process.spawn("pactl move-sink-input #{x.split(" ")[0]} #{list[(list.index(currentSink)+1)%list.length]}")
