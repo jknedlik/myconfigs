@@ -1,3 +1,4 @@
-{"sinks":["Arctis_Pro_Wireless-00.analog-stereo",
-  "hdmi-stereo-extra3",
-  "pci-0000_0d"]}
+{"sinks":[["Arctis_Pro_Wireless-00.stereo","Arctis Pro"],
+	["hdmi-stereo-extra3","Monitor"],
+	["pci-0000_0d","Logitech"]]
+}
