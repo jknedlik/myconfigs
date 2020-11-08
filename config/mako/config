@@ -9,4 +9,4 @@ margin=0,0,0
 padding=10,20
 border-radius=3
 border-size=0
-default-timeout=3600000
+default-timeout=10000
