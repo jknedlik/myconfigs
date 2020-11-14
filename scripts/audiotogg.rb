@@ -12,11 +12,11 @@ puts("list:\" #{HASH} \"")
 sinkInputs=`pactl list short sink-inputs`.split("\n")
 HASH.delete_if {|k,v| k==nil}
 currentSink=sinkInputs[0].split(" ")[1]
-puts("current sink: #{currentSink} next: #{HASH.key?(currentSink) ? nextk(currentSink) : HASH.flatten[0]} flat: #{HASH.flatten[0]}")
 target=(HASH.keys.include? currentSink)? nextk(currentSink) : HASH.flatten[0]
+puts("current sink: #{currentSink} next: #{target}")
 puts("move currentSink and default target to #{target}")
 Process.spawn("notify-send -t 3000 \"switch 🎶\n #{HASH[target]}\"")
-#Process.spawn("pactl set-default-sink #{target}")
+Process.spawn("pactl set-default-sink #{target}")
 for x in sinkInputs do
   Process.spawn("pactl move-sink-input #{x.split(" ")[0]} #{target}")
 end
