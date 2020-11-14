@@ -77,22 +77,6 @@ or other application using the libvirt API.
   </pm>
   <devices>
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
-    <disk type='file' device='cdrom'>
-      <driver name='qemu' type='raw'/>
-      <source file='/home/jknedlik/Downloads/Win10_1909_German_x64.iso'/>
-      <target dev='sda' bus='sata'/>
-      <readonly/>
-      <boot order='1'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
-    </disk>
-    <disk type='file' device='cdrom'>
-      <driver name='qemu' type='raw'/>
-      <source file='/home/jknedlik/Downloads/virtio-win-0.1.185.iso'/>
-      <target dev='sdb' bus='sata'/>
-      <readonly/>
-      <boot order='3'/>
-      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
-    </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='raw'/>
       <source file='/var/lib/libvirt/images/win10.img'/>
