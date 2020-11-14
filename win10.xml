@@ -13,8 +13,8 @@ or other application using the libvirt API.
       <libosinfo:os id="http://microsoft.com/win/10"/>
     </libosinfo:libosinfo>
   </metadata>
-  <memory unit='KiB'>22020096</memory>
-  <currentMemory unit='KiB'>22020096</currentMemory>
+  <memory unit='KiB'>16777216</memory>
+  <currentMemory unit='KiB'>16777216</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
@@ -144,13 +144,13 @@ or other application using the libvirt API.
     </video>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x0b' slot='0x00' function='0x0'/>
+        <address domain='0x0000' bus='0x0a' slot='0x00' function='0x0'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x0b' slot='0x00' function='0x1'/>
+        <address domain='0x0000' bus='0x0a' slot='0x00' function='0x1'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/>
     </hostdev>
