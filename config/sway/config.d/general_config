@@ -11,9 +11,8 @@ output "*" background $config_dir/background.jpg stretch
 #keyboard layout and switching
 
 input 1241:323:MD600_RGB {
-	xkb_layout us,de
+	xkb_layout us-german-umlaut
 	xkb_variant ,nodeadkeys
-	xkb_options grp:win_space_toggle,caps:escape
 }
 
 #use swaybar

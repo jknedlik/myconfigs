@@ -56,6 +56,9 @@ let g:python_highlight_all = 1
 "vimtex auto format
 let g:vimtex_format_enabled=0
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:vimtex_view_method='zathura'
+let g:vimtex_view_method='zathura'
 " Open NERDTree on opening
 " map nerdtree to control n
 nmap <C-c> :Lex<CR>

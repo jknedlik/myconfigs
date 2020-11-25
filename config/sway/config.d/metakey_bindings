@@ -1,5 +1,5 @@
 #Mod1 is ALT on the mistel MD 600
-set $mod Mod1
+set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -53,11 +53,13 @@ bindsym $mod+Shift+r reload
 #
 bindsym $mod+Shift+q exit
 bindsym $mod+p exec termite --class fzf-launcher --title "FZF pass" -e "sh -c fzf-pass"
-bindsym $mod+m exec termite --class "vimpc" --title "vimpc" -e "sh -c vimpc"
+bindsym $mod+m exec termite --class "vimpc" --title "vimpc" -e "sh -c ncmpcpp"
 bindsym $mod+i exec termite --class "alsa" --title "alsa" -e "sh -c ncpamixer"
 #bindsym $mod+p exec "sudo /home/jknedlik/.scripts/swapusb.sh"
-#bindsym $mod+p exec sudo /home/jknedlik/.scripts/swapusb.sh >/tmp/swapusb.log
-bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/startvm.sh >/tmp/startvm.log
+#bindsym $mod+s exec sudo /home/jknedlik/.scripts/swapusb.sh >/tmp/swapusb.log
+#bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/startvm.sh >/tmp/startvm.log
+bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/swapusb.sh >/tmp/swapusb.log
+#bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/startvm.sh >/tmp/startvm.log
 #wofi conf
 bindsym $mod+y exec wofi
 bindsym $mod+Shift+y exec wofi --show run
@@ -65,4 +67,4 @@ bindsym $mod+Shift+y exec wofi --show run
 for_window [title="FZF pass"] focus, floating enabled, border pixel 1, position center
 for_window [title="DLauncher"] focus, floating enabled, border pixel 1, position center
 for_window [title="vimpc"] focus, floating enabled, border pixel 2, position center
-for_window [title="alsa"] focus, floating enabled, border pixel 2, position center
+for_window [title="alsa"] focus, floating enabled, border pixel 2, position  right
