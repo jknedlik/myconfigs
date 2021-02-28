@@ -1,0 +1,41 @@
+#!/usr/bin/python
+import time
+import libvirt
+import sys,os
+import dbus
+from subprocess import call,Popen
+def set_hugepages(hugepages=8600):
+    with open('/proc/sys/vm/nr_hugepages','w') as f:
+        f.write(str(hugepages))
+    time.sleep(1)
+    with open('/proc/sys/vm/nr_hugepages','r') as f:
+        return hugepages<=int(f.readline(1).rstrip())
+def demote():
+    os.setgid(1000)
+    os.setuid(1000)
+
+def startvm():
+    conn=libvirt.open('qemu:///system')
+    if (not 'default' in conn.listNetworks()):
+        conn.networkLookupByName('default').create()
+    if (not 'win10' in [conn.lookupByID(id).name() for id in conn.listDomainsID()]):
+        conn.lookupByName('win10').create()
+    call("systemctl stop usbserver.socket usbserver.service".split())
+    time.sleep(0.5)
+    call("systemctl start usbserver.socket usbserver.service".split())
+    call("systemctl start sshd".split())
+    #demote to user
+    os.environ["LIBASOUND_DEBUG"]="1"
+    os.environ["HOME"]="/home/jknedlik"
+    os.chdir("/home/jknedlik/")
+    #close_fds detaches the subprocess
+    Popen("scream -o pulseaudio -i virbr0 -v -u -p 4011".split(),close_fds=True,preexec_fn=demote)
+    lg=input("Do you want to open a looking class client? [y/N]")
+    #if(lg=="y" or lg=="Y"):
+    #Popen("scream -o pulseaudio -i virbr0 -v -u -p 4011".split(),close_fds=True,preexec_fn=()
+
+
+set_hugepages()
+os.chown("/dev/nvme0n1",0,992)#root:kvm
+startvm()
+
