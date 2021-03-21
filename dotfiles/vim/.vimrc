@@ -97,25 +97,14 @@ let NERDTreeMapJumpFirstChild='\K'
 nnoremap J :tabp<CR>
 nnoremap K :tabn<CR>
 
-inoremap kj <esc>
-inoremap jk <esc>
 
-
-"let gitgutter stage hunkes/chunks and run between them
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-nmap <Leader>ha <Plug>(GitGutterStageHunk)
-nmap <Leader>hr <Plug>(GitGutterUndoHunk)
-"let g:gitgutter_highlight_lines = 1
-let g:gitgutter_realtime = 1
-let g:gitgutter_updatetime = 250
-"hmmm
 " easy movement in vim
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-" use onedark colorscheme
+" gitgutter 
+source $HOME/.vim/config/.vimrc-git
 
 colorscheme onedark
 "Set Terminal to allow for transparency
