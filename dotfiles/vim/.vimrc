@@ -46,9 +46,6 @@ Plugin 'mileszs/ack.vim' " ackvim and ag as search engine install the_silver_sea
 nnoremap - <nop>
 let mapleader="-"
 let maplocalleader="\\"
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
@@ -101,7 +98,6 @@ augroup CLNRSet
 augroup END
 set cursorline
 
-inoremap <c-v>  <Plug>(fakeclip-p)
 "include coc config
 source $HOME/.vim/config/.vimrc-coc
 " jump between tabs
@@ -121,5 +117,11 @@ autocmd! BufNewFile,BufRead *.vs,*.fs,*.vert,*.frag set ft=glsl
 let g:glsl_default_version = 'glsl450'
 " map tagbar toggle to control b 
 nmap <C-b> :TagbarToggle<CR>
+" set fakeclip to ctrl v
+inoremap <c-v>  <Plug>(fakeclip-p)
+" set silver searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 call vundle#end()
