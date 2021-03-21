@@ -57,18 +57,8 @@ source $HOME/.vim/config/.vimrc-latex
 source $HOME/.vim/config/.vimrc-nerdtree
 " clang format config
 source $HOME/.vim/config/.vimrc_clang-format
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'git:','gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
-
-
+" lightline
+source $HOME/.vim/config/.vimrc-lightline
 " git gutter 
 source $HOME/.vim/config/.vimrc-git
 " syntastic cpp 
