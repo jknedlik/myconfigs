@@ -76,25 +76,7 @@ let g:NERDTreeMapPreview="<F4>"
 "nertree should cd when used
 let g:NERDTreeChDirMode = 2
 "clang format
-autocmd FileType c ClangFormatAutoEnable
-autocmd FileType cpp ClangFormatAutoEnable
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
-" if you install vim-operator-user
-autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
-let g:ClangFormatAutoEnable = 1
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
-            \ "AllowShortFunctionsOnASingleLine" : "true",
-            \ "AllowShortLoopsOnASingleLine" : "true",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11",
-            \ "BreakBeforeBraces" : "Stroustrup",
-            \ "IndentWidth" : "2"}
-" Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
-
+source $HOME/.vim/config/.vimrc_clang-format
 " map tagbar toggle to control b 
 nmap <C-b> :TagbarToggle<CR>
 "let tagbar change highlightedtag change faster
