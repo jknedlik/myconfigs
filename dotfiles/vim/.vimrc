@@ -135,22 +135,9 @@ let g:clang_verbose_pmenu = 0
 " glsl shader 
 autocmd! BufNewFile,BufRead *.vs,*.fs,*.vert,*.frag set ft=glsl
 set number "line number
-set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
+"syntastic cpp 
+source $HOME/.vim/config/.vimrc-c++
 
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_enable_signs=1
-    let g:syntastic_error_symbol = '✗'
-    let g:syntastic_warning_symbol = '⚠'
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_quiet_messages = {
-			    \ "regex": [
-			    \ '\mpossible unwanted space at "{"',
-			    \ 'backward_warning.h'
-			    \ ] } 
 :set number relativenumber
 
 augroup numbertoggle
