@@ -63,8 +63,7 @@ let g:latex_viewer_general_viewer='zathura'
 nmap <C-c> :Lex<CR>
 silent! map <C-n> :NERDTreeFind<CR>
 
-let mapleader="-"
-let maplocalleader="\\"
+
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 "let g:NERDTreeQuitOnOpen = 1
@@ -93,15 +92,6 @@ let g:lightline = {
 let NERDTreeMapJumpLastChild='\J'
 let NERDTreeMapJumpFirstChild='\K'
 
-nnoremap J :tabp<CR>
-nnoremap K :tabn<CR>
-
-
-" easy movement in vim
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 " gitgutter 
 source $HOME/.vim/config/.vimrc-git
 
@@ -134,4 +124,16 @@ inoremap <c-v>  <Plug>(fakeclip-p)
 "hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=Yellow
 "include coc config
 source $HOME/.vim/config/.vimrc-coc
+
+let mapleader="-"
+let maplocalleader="\\"
+nnoremap J :tabp<CR>
+nnoremap K :tabn<CR>
+
+
+" easy movement in vim
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 call vundle#end()
