@@ -179,4 +179,6 @@ augroup END
 set cursorline
 "highlight LineNr ctermfg=gray
 "hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=Yellow
+#include coc config
+source $HOME/.vim/config/.vimrc-coc
 call vundle#end()
