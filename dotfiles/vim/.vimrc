@@ -43,13 +43,13 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'mileszs/ack.vim' " ackvim and ag as search engine install the_silver_searcher
-nnoremap - <nop>
-let mapleader="-"
-let maplocalleader="\\"
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
-
+" set localleader for everything
+nnoremap - <nop>
+let mapleader="-"
+let maplocalleader="\\"
 "---------------- INCLUDES
 " latex/vimtex
 source $HOME/.vim/config/.vimrc-latex
