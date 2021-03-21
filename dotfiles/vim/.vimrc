@@ -1,6 +1,6 @@
 execute pathogen#infect()
 
-set autochdir
+"set autochdir
 set nocompatible
 syntax on
 filetype plugin indent on
@@ -21,13 +21,11 @@ Plugin 'vim-scripts/slimv.vim'
 Plugin 'neomutt/neomutt.vim'
 Plugin 'VundleVim/Vundle.vim' "vundle manager
 Plugin 'itchyny/lightline.vim'  "bottom line with information
-Plugin 'ervandew/supertab' "completition with tab
-"#Plugin 'vim-scripts/OmniCppComplete' "auto complete
+Plugin 'myint/syntastic-extras'
 Plugin 'octol/vim-cpp-enhanced-highlight' "syntax highlighting
 Plugin 'vim-scripts/Cpp11-Syntax-Support'
 Plugin 'majutsushi/tagbar' "tagbar not working
 Plugin 'universal-ctags/ctags'
-"Plugin 'justmao945/vim-clang' "c++ autocompletion
 Plugin 'kana/vim-operator-user'
 Plugin 'rhysd/vim-clang-format' "c++ clang format 
 Plugin 'vim-syntastic/syntastic' "formatting rules for different language
@@ -37,7 +35,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive' 
 Plugin 'itchyny/vim-gitbranch' 
 Plugin 'airblade/vim-gitgutter' 
-Plugin 'ycm-core/YouCompleteMe' 
 Plugin 'lervag/vimtex' 
 Plugin 'Shougo/neosnippet.vim' 
 Plugin 'Shougo/neosnippet-snippets'
@@ -52,8 +49,7 @@ endif
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
-Plugin 'coddingtonbear/neomake-platformio'
-Plugin 'aars/syntastic-platformio'
+"Plugin 'coddingtonbear/neomake-platformio'
 
 "python highlighting including fstrings
 let g:python_highlight_all = 1
@@ -62,7 +58,7 @@ let g:vimtex_format_enabled=0
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:vimtex_view_method='zathura'
-let g:vimtex_view_method='zathura'
+let g:latex_viewer_general_viewer='zathura'
 " Open NERDTree on opening
 " map nerdtree to control n
 nmap <C-c> :Lex<CR>
@@ -74,7 +70,7 @@ let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 "let g:NERDTreeQuitOnOpen = 1
 "nertree should cd when used
-let g:NERDTreeChDirMode = 2
+let g:NERDTreeChDirMode = 0
 "clang format
 source $HOME/.vim/config/.vimrc_clang-format
 " map tagbar toggle to control b 
@@ -120,20 +116,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " use onedark colorscheme
+
 colorscheme onedark
 "Set Terminal to allow for transparency
 hi Normal guibg=NONE ctermbg=NONE
-"Set vim-clang to use
-let g:clang_cpp_options = '-std=c++17 -I.. -I.' 
-let g:clang_compilation_database = './build'
-let g:clang_verbose_pmenu = 0
-" enable debug with let g:clang_debug = 3
-" ycm settings
-  let g:ycm_confirm_extra_conf = 0
-  let g:ycm_log_level='debug' 
-
 " glsl shader 
 autocmd! BufNewFile,BufRead *.vs,*.fs,*.vert,*.frag set ft=glsl
+let g:glsl_default_version = 'glsl450'
 set number "line number
 "syntastic cpp 
 source $HOME/.vim/config/.vimrc-c++
@@ -150,7 +139,7 @@ augroup CLNRSet
     autocmd! ColorScheme * hi CursorLineNR cterm=bold
 augroup END
 set cursorline
-"
+
 inoremap <c-v>  <Plug>(fakeclip-p)
 "highlight LineNr ctermfg=gray
 "hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=Yellow
