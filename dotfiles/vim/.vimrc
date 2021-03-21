@@ -69,17 +69,19 @@ let g:lightline = {
       \ }
 
 
-" gitgutter 
+" git gutter 
 source $HOME/.vim/config/.vimrc-git
-
+" syntastic cpp 
+source $HOME/.vim/config/.vimrc-c++
+"  coc config
+source $HOME/.vim/config/.vimrc-coc
+"---------------- GENERAL CONFIGS
 " use onedark colorscheme
 colorscheme onedark
 let g:onedark_terminal_italics = 1
 "Set Terminal to allow for transparency
 hi Normal guibg=NONE ctermbg=NONE
 set number "line number
-"syntastic cpp 
-source $HOME/.vim/config/.vimrc-c++
 
 :set number relativenumber
 
@@ -94,8 +96,6 @@ augroup CLNRSet
 augroup END
 set cursorline
 
-"include coc config
-source $HOME/.vim/config/.vimrc-coc
 " jump between tabs
 nnoremap J :tabp<CR>
 nnoremap K :tabn<CR>
@@ -105,7 +105,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-"SECTION <SMALL configs>
+"---------------- SMALL CONFIGS
 "python highlighting including fstrings
 let g:python_highlight_all = 1
 "set filenames for glsl highlight
