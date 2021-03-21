@@ -1,0 +1,11 @@
+[Unit]
+Description=Sway bspw style window switcher
+BindsTo=graphical-session.target
+Wants=graphical-session-pre.target
+After=graphical-session-pre.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=%h/.scripts/alternating_layouts.py 2>%h/sway_bspw.log
+
