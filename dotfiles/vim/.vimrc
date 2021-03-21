@@ -50,16 +50,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
 
-"vimtex auto format
-let g:vimtex_format_enabled=0
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:vimtex_view_method='zathura'
-let g:latex_viewer_general_viewer='zathura'
-
-"nerdtree config
+"---------------- INCLUDES
+" latex/vimtex
+source $HOME/.vim/config/.vimrc-latex
+" nerdtree config
 source $HOME/.vim/config/.vimrc-nerdtree
-"clang format config
+" clang format config
 source $HOME/.vim/config/.vimrc_clang-format
 let g:lightline = {
       \ 'colorscheme': 'one',
