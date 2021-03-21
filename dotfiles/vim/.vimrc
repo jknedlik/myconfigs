@@ -64,11 +64,6 @@ let g:latex_viewer_general_viewer='zathura'
 source $HOME/.vim/config/.vimrc-nerdtree
 "clang format config
 source $HOME/.vim/config/.vimrc_clang-format
-" map tagbar toggle to control b 
-nmap <C-b> :TagbarToggle<CR>
-"let tagbar change highlightedtag change faster
-"silent! map <C-1> :NERDTreeFind<CR>
-let g:onedark_terminal_italics = 1
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
@@ -88,9 +83,6 @@ source $HOME/.vim/config/.vimrc-git
 colorscheme onedark
 "Set Terminal to allow for transparency
 hi Normal guibg=NONE ctermbg=NONE
-" glsl shader 
-autocmd! BufNewFile,BufRead *.vs,*.fs,*.vert,*.frag set ft=glsl
-let g:glsl_default_version = 'glsl450'
 set number "line number
 "syntastic cpp 
 source $HOME/.vim/config/.vimrc-c++
@@ -109,11 +101,9 @@ augroup END
 set cursorline
 
 inoremap <c-v>  <Plug>(fakeclip-p)
-"highlight LineNr ctermfg=gray
-"hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=Yellow
 "include coc config
 source $HOME/.vim/config/.vimrc-coc
-
+" jump between tabs
 nnoremap J :tabp<CR>
 nnoremap K :tabn<CR>
 
@@ -122,4 +112,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+"SECTION <SMALL configs>
+"python highlighting including fstrings
+let g:python_highlight_all = 1
+"set filenames for glsl highlight
+autocmd! BufNewFile,BufRead *.vs,*.fs,*.vert,*.frag set ft=glsl
+let g:glsl_default_version = 'glsl450'
+" map tagbar toggle to control b 
+nmap <C-b> :TagbarToggle<CR>
+
 call vundle#end()
