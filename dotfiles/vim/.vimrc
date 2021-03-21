@@ -43,6 +43,9 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'mileszs/ack.vim' " ackvim and ag as search engine install the_silver_searcher
+nnoremap - <nop>
+let mapleader="-"
+let maplocalleader="\\"
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
@@ -91,7 +94,6 @@ let g:lightline = {
 "jannis fun way to move in vim/ end insert mode
 let NERDTreeMapJumpLastChild='\J'
 let NERDTreeMapJumpFirstChild='\K'
-
 " gitgutter 
 source $HOME/.vim/config/.vimrc-git
 
@@ -125,11 +127,8 @@ inoremap <c-v>  <Plug>(fakeclip-p)
 "include coc config
 source $HOME/.vim/config/.vimrc-coc
 
-let mapleader="-"
-let maplocalleader="\\"
 nnoremap J :tabp<CR>
 nnoremap K :tabn<CR>
-
 
 " easy movement in vim
 nnoremap <C-h> <C-w>h
