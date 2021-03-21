@@ -81,6 +81,7 @@ source $HOME/.vim/config/.vimrc-git
 
 " use onedark colorscheme
 colorscheme onedark
+let g:onedark_terminal_italics = 1
 "Set Terminal to allow for transparency
 hi Normal guibg=NONE ctermbg=NONE
 set number "line number
