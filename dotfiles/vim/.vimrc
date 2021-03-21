@@ -9,8 +9,12 @@ set laststatus=2
 call vundle#begin()
 set encoding=utf-8
 
-
+"using the fake clipboard in wayland
+let g:fakeclip_provide_clipboard_key_mappings = !empty($WAYLAND_DISPLAY)
+Plugin 'kana/vim-fakeclip'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'neomake/neomake'
+Plugin 'jackguo380/vim-lsp-cxx-highlight'
 Plugin 'vim-python/python-syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-scripts/slimv.vim'
@@ -177,8 +181,10 @@ augroup CLNRSet
     autocmd! ColorScheme * hi CursorLineNR cterm=bold
 augroup END
 set cursorline
+"
+inoremap <c-v>  <Plug>(fakeclip-p)
 "highlight LineNr ctermfg=gray
 "hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=Yellow
-#include coc config
+"include coc config
 source $HOME/.vim/config/.vimrc-coc
 call vundle#end()
