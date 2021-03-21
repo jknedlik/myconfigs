@@ -49,7 +49,6 @@ endif
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
-"Plugin 'coddingtonbear/neomake-platformio'
 
 "python highlighting including fstrings
 let g:python_highlight_all = 1
@@ -106,6 +105,7 @@ nnoremap <C-l> <C-w>l
 " gitgutter 
 source $HOME/.vim/config/.vimrc-git
 
+" use onedark colorscheme
 colorscheme onedark
 "Set Terminal to allow for transparency
 hi Normal guibg=NONE ctermbg=NONE
