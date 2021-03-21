@@ -53,26 +53,16 @@ Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
 
-"python highlighting including fstrings
-let g:python_highlight_all = 1
 "vimtex auto format
 let g:vimtex_format_enabled=0
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:vimtex_view_method='zathura'
 let g:latex_viewer_general_viewer='zathura'
-" Open NERDTree on opening
-" map nerdtree to control n
-nmap <C-c> :Lex<CR>
-silent! map <C-n> :NERDTreeFind<CR>
 
-
-let g:NERDTreeMapActivateNode="<F3>"
-let g:NERDTreeMapPreview="<F4>"
-"let g:NERDTreeQuitOnOpen = 1
-"nertree should cd when used
-let g:NERDTreeChDirMode = 0
-"clang format
+"nerdtree config
+source $HOME/.vim/config/.vimrc-nerdtree
+"clang format config
 source $HOME/.vim/config/.vimrc_clang-format
 " map tagbar toggle to control b 
 nmap <C-b> :TagbarToggle<CR>
@@ -91,9 +81,6 @@ let g:lightline = {
       \ }
 
 
-"jannis fun way to move in vim/ end insert mode
-let NERDTreeMapJumpLastChild='\J'
-let NERDTreeMapJumpFirstChild='\K'
 " gitgutter 
 source $HOME/.vim/config/.vimrc-git
 

@@ -1,0 +1,12 @@
+" Open NERDTree on opening
+" map nerdtree to control n
+nmap <C-c> :Lex<CR>
+silent! map <C-n> :NERDTreeFind<CR>
+
+let g:NERDTreeMapActivateNode="<F3>"
+let g:NERDTreeMapPreview="<F4>"
+"should cd when used
+let g:NERDTreeChDirMode = 0
+"jannis fun way to move in vim/ end insert mode
+let NERDTreeMapJumpLastChild='\J'
+let NERDTreeMapJumpFirstChild='\K'
