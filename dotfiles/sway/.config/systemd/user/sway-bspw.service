@@ -7,5 +7,5 @@ After=graphical-session-pre.target
 [Service]
 Type=simple
 Restart=always
-ExecStart=%h/.scripts/alternating_layouts.py 2>%h/sway_bspw.log
+ExecStart=persway -a -o 100 
 
