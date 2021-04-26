@@ -17,7 +17,7 @@ input 1241:323:MD600_RGB {
 
 #use swaybar
 bar {
-	swaybar_command waybar
+	swaybar_command systemctl --user restart waybar
 }
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec systemctl --user restart sway-bspw
