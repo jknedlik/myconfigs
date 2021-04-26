@@ -3,7 +3,7 @@
     "position": "right",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-        "modules-right": ["pulseaudio","cpu","memory", "tray","clock"],
+        "modules-right": ["custom/watson_name","custom/watson_current","custom/watson_today","pulseaudio","cpu","memory", "tray","clock"],
     "sway/window": {
         "max-length": 50
     },
@@ -40,5 +40,25 @@
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
-    }
+    },
+   "custom/watson_name": {
+     "format":"{}",
+     "interval": 9999,
+     "exec": "echo master",
+     "exec-if": "which watson"
+},
+   "custom/watson_current": {
+     "format":"{}",
+     "interval": 60,
+     "exec": "~/.config/waybar/modules/watson_time current",
+     "tooltip": "echo current master time",
+     "exec-if": "which watson"
+   },
+   "custom/watson_today": {
+     "format":"{}",
+     "interval": 60,
+     "exec": "~/.config/waybar/modules/watson_time today",
+     "exec-if": "which watson",
+     "tooltip": "daily master time" 
+   }
 }

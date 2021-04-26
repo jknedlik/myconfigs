@@ -75,3 +75,12 @@ window#waybar {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+#custom-watson_today{
+    font-size: 50% ;
+}
+#custom-watson_name{
+    font-size: 70% ;
+}
+#custom-watson_current{
+    font-size: 80% ;
+}
