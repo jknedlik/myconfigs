@@ -1,22 +1,26 @@
 #!/usr/bin/env ruby
-running=`watson status -p |grep master`.chop
-today=`watson report --day -p master|grep Total`.chop.split(' ')
-today=today[1]+today[2]
-secs=0
-mins=0
-if running=="master" ; then 
-  current=`watson status |grep master`.chop.split(' ');
-  if current[4]=="seconds" then
-    secs=current[3]
-  end
-
-  if current[4]=="minutes"
-    mins=current[3]
-  end
-  current="#{mins}m#{secs}s"
-else
-  current="0m0s"
+require 'date'
+require 'time'
+p="%02d"
+def current()
+if running=`watson status -p |grep master`.chop=="master" ;then
+  time=`watson status |grep master`.chop.split('(')[1].split('+')[0]
+  x=Time.strptime(time,'%Y.%m.%d %H:%M:%S') 
+  curr=Time.now-x;
+  puts("#{"%02d"%(curr.to_i/60)}:#{"%02d"%(curr.to_i%60)}")
+else 
+  puts("00:00")
 end
-puts(current) unless ARGV[0]!="current"
-puts("+(#{today})") unless ARGV[0]!="today"
+end
+def today()
+ today=`watson report --day -p master|grep Total`.chop.split(' ')
+ h=today[1].split('h')[0].to_i
+ m=today[2].split('m')[0].to_i
+ s=today[3].split('s')[0].to_i
+ puts("+#{"%02d"%h}:#{"%02d"%m}:#{"%02d"%s}")
+end
+running=`watson status -p |grep master`.chop
+
   
+  current() if ARGV[0]=="current"
+  today() if ARGV[0]=="today"

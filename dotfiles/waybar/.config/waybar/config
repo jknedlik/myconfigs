@@ -49,16 +49,18 @@
 },
    "custom/watson_current": {
      "format":"{}",
-     "interval": 60,
+     "interval": 1,
      "exec": "~/.config/waybar/modules/watson_time current",
      "tooltip": "echo current master time",
-     "exec-if": "which watson"
+     "exec-if": "which watson",
+     "on-click": "~/.config/waybar/modules/watson_toggle"
    },
    "custom/watson_today": {
      "format":"{}",
-     "interval": 60,
+     "interval": 1,
      "exec": "~/.config/waybar/modules/watson_time today",
      "exec-if": "which watson",
-     "tooltip": "daily master time" 
+     "tooltip": "daily master time",
+     "on-click": "~/.config/waybar/modules/watson_toggle"
    }
 }
