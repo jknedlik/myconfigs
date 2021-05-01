@@ -13,14 +13,16 @@ else
 end
 end
 def today()
- today=`watson report --day -p master|grep Total`.chop.split(' ')
- h=today[1].split('h')[0].to_i
- m=today[2].split('m')[0].to_i
- s=today[3].split('s')[0].to_i
- puts("+#{"%02d"%h}:#{"%02d"%m}:#{"%02d"%s}")
+ today=`watson report --day -p master|grep Total`
+ today=today.chop.split(' ') unless today.nil?
+ today=today.select{ |date| /[0-9][0-9][m,s,h]/=~date.to_s }
+ today.each{|date|date[2]=''}
+ while today.length < 3 do
+  today.insert(0,"00")
+ end
+ puts("+#{"%02d"%today[0].to_i}:#{"%02d"%today[1].to_i}:#{"%02d"%today[2].to_i}")
 end
-running=`watson status -p |grep master`.chop
 
-  
+  running=`watson status -p |grep master`.chop
   current() if ARGV[0]=="current"
   today() if ARGV[0]=="today"
