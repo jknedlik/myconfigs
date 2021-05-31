@@ -204,5 +204,7 @@ d='dirs -v | head -10'
 7='cd -7'
 8='cd -8'
 9='cd -9'
+#set --user python path
+export PATH=$PATH:~/.local/bin
 #setopt autocd autopushd \ pushdignoredups
 #source ~/documents/spack/share/spack/setup-env.sh
