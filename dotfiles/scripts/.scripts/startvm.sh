@@ -18,7 +18,7 @@ do
 	sudo systemctl stop usbserver.socket usbserver.service || true
 	sleep 0.5 
 	sudo systemctl start usbserver.socket usbserver.service || true
-	LIBASOUND_DEBUG=1 scream -o pulseaudio -i virbr0 -v -u -p 4011 &>/tmp/scream.log &
+	sudo LIBASOUND_DEBUG=1 scream -o pulseaudio -i virbr0 -v -u -p 4011 &>/tmp/scream.log &
 	if [ "$ask" = "y" ]; then
 		looking-glass-client spice:enable=no  -F -k 1>/tmp/looking-glass-log 2>/tmp/looking-glass-log & 
 	fi	
