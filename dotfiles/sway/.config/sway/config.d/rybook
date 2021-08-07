@@ -1,0 +1,9 @@
+
+bindsym $mod+Shift+z exec swaymsg "output * dpms off"
+bindsym $mod+z exec swaymsg "output * dpms on"
+bindsym $mod+Period exec amixer -D pulse sset Master 3%-
+bindsym $mod+Comma exec amixer -D pulse sset Master 3%+
+bindsym $mod+Shift+Period exec light -S 90
+bindsym $mod+Shift+Comma exec light -S 1
+
+
