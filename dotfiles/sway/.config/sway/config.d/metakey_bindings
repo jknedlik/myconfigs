@@ -6,6 +6,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec termite
+# start a hovering terminal
+bindsym $mod+Shift+Return exec termite --title="Hovering execute Terminal"
 
 # make waybar dissappear
 bindsym $mod+x exec killall -SIGUSR1 waybar
@@ -36,6 +38,7 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -63,7 +66,7 @@ bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/swapusb.sh >/tmp/swapusb.
 #wofi conf
 bindsym $mod+y exec wofi
 bindsym $mod+Shift+y exec wofi --show run
-#
+for_window [title="Hovering execute Terminal"] focus, floating enabled, border pixel 1, position center
 for_window [title="FZF pass"] focus, floating enabled, border pixel 1, position center
 for_window [title="DLauncher"] focus, floating enabled, border pixel 1, position center
 for_window [title="vimpc"] focus, floating enabled, border pixel 2, position center
