@@ -58,14 +58,13 @@ bindsym $mod+Shift+q exit
 bindsym $mod+p exec termite --class fzf-launcher --title "FZF pass" -e "sh -c fzf-pass"
 bindsym $mod+m exec termite --class "vimpc" --title "vimpc" -e "sh -c ncmpcpp"
 bindsym $mod+i exec termite --class "alsa" --title "alsa" -e "sh -c ncpamixer"
-#bindsym $mod+p exec "sudo /home/jknedlik/.scripts/swapusb.sh"
-#bindsym $mod+s exec sudo /home/jknedlik/.scripts/swapusb.sh >/tmp/swapusb.log
-#bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/startvm.sh >/tmp/startvm.log
+
+# period and comma for sounde up/down 
+bindsym $mod+Period exec amixer -D pulse sset Master 3%+
+bindsym $mod+Comma exec amixer -D pulse sset Master 3%-
+
 bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/swapusb.sh >/tmp/swapusb.log
-#bindsym $mod+Shift+p exec sudo /home/jknedlik/.scripts/startvm.sh >/tmp/startvm.log
-#wofi conf
-bindsym $mod+y exec wofi
-bindsym $mod+Shift+y exec wofi --show run
+
 for_window [title="Hovering execute Terminal"] focus, floating enabled, border pixel 1, position center
 for_window [title="FZF pass"] focus, floating enabled, border pixel 1, position center
 for_window [title="DLauncher"] focus, floating enabled, border pixel 1, position center
