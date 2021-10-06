@@ -57,6 +57,7 @@ bindsym $mod+Shift+r reload
 bindsym $mod+Shift+q exit
 bindsym $mod+p exec termite --class fzf-launcher --title "FZF pass" -e "sh -c fzf-pass"
 bindsym $mod+m exec termite --class "vimpc" --title "vimpc" -e "sh -c ncmpcpp"
+bindsym $mod+Shift+m exec mumble "mumble://mumble.9009l3.de:64738/LeWhite/Gammeln 1"
 bindsym $mod+i exec termite --class "alsa" --title "alsa" -e "sh -c ncpamixer"
 
 # period and comma for sounde up/down 
