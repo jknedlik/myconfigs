@@ -39,6 +39,7 @@ Plugin 'lervag/vimtex'
 Plugin 'Shougo/neosnippet.vim' 
 Plugin 'Shougo/neosnippet-snippets'
 "snipmate
+let g:snipMate = {'snippet_version':1}
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
@@ -46,6 +47,7 @@ Plugin 'mileszs/ack.vim' " ackvim and ag as search engine install the_silver_sea
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'leafgarland/typescript-vim'
+Plugin 'neoclide/coc.nvim'
 " set localleader for everything
 nnoremap - <nop>
 let mapleader="-"
@@ -96,6 +98,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 "---------------- SMALL CONFIGS
+let g:vim_markdown_folding_disabled = 1
 "python highlighting including fstrings
 let g:python_highlight_all = 1
 "set filenames for glsl highlight
