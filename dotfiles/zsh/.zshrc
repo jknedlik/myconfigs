@@ -165,6 +165,7 @@ fi
 export MOZ_ENABLE_WAYLAND=1
 #export QT_WAYLAND_FORCE_DPI=physical
 export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
 alias virgo="ssh virgo"
 alias kronos="ssh kronos"
 export WLR_DRM_DEVICES=/dev/dri/card0
