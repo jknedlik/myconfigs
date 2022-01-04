@@ -1,0 +1,71 @@
+
+scrolling:
+  history: 20000
+  multiplier: 3
+
+font:
+  normal:
+    family: Droid Sans Mono for Powerline 
+    style: Regular
+
+  bold:
+    family: Droid Sans Mono for Powerline 
+    style: Bold
+
+  italic:
+    family: Droid Sans Mono for Powerline 
+    style: Italic
+
+  bold_italic:
+    family: Droid Sans Mono for Powerline 
+    style: Bold Italic
+  size: 12
+background_opacity: 0.8
+colors:
+  # Default colors
+  primary:
+    background: '0x202020'
+    foreground: '0xdddddd'
+
+    dim_foreground:    '0xdbdbdb'
+    bright_foreground: '0xd9d9d9'
+    dim_background:    '0x202020' # not sure
+    bright_background: '0x3a3a3a' # not sure
+
+  # Cursor colors
+  cursor:
+    text:   '0x2c2c2c'
+    cursor: '0x000000'
+
+  # Normal colors
+  normal:
+    black:   '0x263238'
+    red:     '0xff9800'
+    green:   '0x8bc34a'
+    yellow:  '0xffc107'
+    blue:    '0x02557a'
+    magenta: '0xe91e63'
+    cyan:    '0x009688'
+    white:   '0xcc7fe1'
+
+  # Bright colors
+  bright:
+    black:   '0x636363'
+    red:     '0xbc5653'
+    green:   '0x909d63'
+    yellow:  '0xebc17a'
+    blue:    '0x7eaac7'
+    magenta: '0xaa6292'
+    cyan:    '0x86d3ce'
+    white:   '0xf7f7f7'
+
+  # Dim colors
+  dim:
+    black:   '0x37474f'
+    red:     '0xffa74d'
+    green:   '0xcf326f'
+    yellow:  '0xffa000'
+    blue:    '0xc618c1'
+    magenta: '0xcb2020'
+    cyan:    '0x26a69a'
+    white:   '0xcc7fe1'
