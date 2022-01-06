@@ -99,6 +99,8 @@ plugins=(
 	fzf
 )
 
+bindkey "^[[3~" delete-char
+
 
 # User configuration
 
