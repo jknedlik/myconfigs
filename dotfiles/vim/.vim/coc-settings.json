@@ -2,6 +2,7 @@
     "languageserver": {
         "ccls": {
             "command": "ccls",
+	    "args": ["--log-file=/tmp/ccls.log","--log-file-append","-v=3"],
             "filetypes": [
                 "c",
                 "cpp",
