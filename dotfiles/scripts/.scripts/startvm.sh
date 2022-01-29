@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "do you want me to start the lookgin glass client?[y/N]"
-read -n1 ask
 HUGEPAGES_NR=8600
 oldnr=0
 sudo sh -c "echo $HUGEPAGES_NR >/proc/sys/vm/nr_hugepages"
@@ -18,10 +16,7 @@ do
 	sudo systemctl stop usbserver.socket usbserver.service || true
 	sleep 0.5 
 	sudo systemctl start usbserver.socket usbserver.service || true
-	sudo LIBASOUND_DEBUG=1 scream -o pulseaudio -i virbr0 -v -u -p 4011 &>/tmp/scream.log &
-	if [ "$ask" = "y" ]; then
-		looking-glass-client spice:enable=no  -F -k 1>/tmp/looking-glass-log 2>/tmp/looking-glass-log & 
-	fi	
+	sudo -u jknedlik DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u jknedlik)/bus systemctl --user start liba
 	sudo systemctl start sshd
 	exit
   fi
