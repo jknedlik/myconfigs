@@ -12,15 +12,15 @@ bindsym $mod+Shift+Return exec alacritty --title="Hovering execute Terminal"
 # make waybar dissappear
 bindsym $mod+x exec killall -SIGUSR1 waybar
 # dlauncher
-bindsym $mod+d exec termite --title="DLauncher" --name=launcher -e "bash -c 'find /usr/share/applications -name *.desktop | xargs basename -s .desktop -a | fzf | xargs -r swaymsg -t command exec gtk-launch'"
-bindsym $mod+o exec termite --title="DLauncher" --name=launcher -e "fzf~| xargs -r swaymsg -t command exec termite  -e'bash -c cd '"
+bindsym $mod+d exec alacritty --title="DLauncher" -e sh -c 'find /usr/share/applications -name *.desktop | xargs basename -s .desktop -a|fzf|xargs -r swaymsg -t command exec gtk-launch'
+#bindsym $mod+o exec alacritty --title="DLauncher" --name=launcher -e fzf~| xargs -r swaymsg -t command exec alacritty  -e bash -c cd 
 # qtbrowser
 bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" qutebrowser
 # grim
 bindsym $mod+g exec grim -t png ~/screenshots/$(date +%Y-%m-%d_%H-%m).png l& notify-send -t 1000 "captured screenshot " && gthumb ~/screenshots/$(date +%Y-%m-%d_%H-%m).png
 
-# test termite
-bindsym $mod+c exec termite -d "$(termitewin.sh)"
+# test alacritty
+bindsym $mod+c exec alacritty -d "$(alacrittywin.sh)"
 # kill focused window
 bindsym $mod+q kill
 
@@ -55,10 +55,10 @@ bindsym $mod+Shift+r reload
 # Exit sway (logs you out of your Wayland session)
 #
 bindsym $mod+Shift+q exit
-bindsym $mod+p exec termite --class fzf-launcher --title "FZF pass" -e "sh -c fzf-pass"
-bindsym $mod+m exec termite --class "vimpc" --title "vimpc" -e "sh -c ncmpcpp"
+bindsym $mod+p exec alacritty --class fzf-launcher --title "FZF pass" -e sh -c fzf-pass
+bindsym $mod+m exec alacritty --class "vimpc" --title "vimpc" -e sh -c ncmpcpp
 bindsym $mod+Shift+m exec mumble "mumble://mumble.9009l3.de:64738/LeWhite/Gammeln 1"
-bindsym $mod+i exec termite --class "alsa" --title "alsa" -e "sh -c ncpamixer"
+bindsym $mod+i exec alacritty --class "alsa" --title "alsa" -e sh -c ncpamixer
 
 # period and comma for sounde up/down 
 bindsym $mod+Period exec amixer -D pulse sset Master 3%+
