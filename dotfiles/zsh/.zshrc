@@ -180,6 +180,7 @@ alias rcd="source ranger"
 alias gs="git status"
 alias gch="git checkout"
 alias gdc="git diff --cached"
+alias userctl="systemctl --user"
 export nfsend="notify-send '%s -%m' -c im.received && paplay /usr/share/sounds/gnome/default/alerts/sonar.ogg"
 alias signal="scli -n -e vim -s -f -N \"$nfsend\""
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
