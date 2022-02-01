@@ -1,6 +1,6 @@
 {"sinks":[["Arctis_Pro_Wireless-00.stereo","Arctis Pro"],
-	["hdmi-stereo-extra3","Monitor"],
-	["pci-0000_0d","Logitech"],
+	["hdmi-stereo-extra3","HDMI/Monitor"],
+	["pci-0000_0c","Logitech"],
 	["bluez_sink.98_52_3D_85_2F_9C","in ear bt"]
 ]
 }
