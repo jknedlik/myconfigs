@@ -1,4 +1,5 @@
 output HDMI-A-1 pos 0 0 res 3840 2160 
+output DP-1 transform 270
 #scale 1.5
 #output DP-3 disable
 bindsym $mod+Shift+t exec cd ~/.scripts && audiotogg.rb
