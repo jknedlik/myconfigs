@@ -1,0 +1,1 @@
+/home/jknedlik/documents/pandoc-minted/pandoc-minted.py
