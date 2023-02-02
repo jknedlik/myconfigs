@@ -69,6 +69,7 @@ alias v=vagrant
 alias rcd="source ranger"
 alias userctl="systemctl --user"
 alias signal="scli -n -e vim -s -f -N \"$nfsend\""
+alias swaylock="swaylock -c #000000"
 
 ###### Git Aliases
 alias gs="git status"
