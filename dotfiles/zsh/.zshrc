@@ -119,3 +119,5 @@ d='dirs -v | head -10'
 #set --user python path
 export PATH=$PATH:~/.local/bin
 #setopt autocd autopushd \ pushdignoredups
+# let pinentry auto decide to use a terminal pinentry command
+export PINENTRY_USER_DATA="tty"

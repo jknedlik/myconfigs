@@ -1,0 +1,5 @@
+#!/bin/bash
+case $PINENTRY_USER_DATA in
+  tty) exec /usr/bin/pinentry-curses "$@" ;;
+  *)   exec /usr/bin/pinentry-gnome3 "$@" ;;
+esac
