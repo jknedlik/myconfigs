@@ -3,16 +3,17 @@ import sys
 import subprocess
 from tempfile import NamedTemporaryFile as TMPFile
 
-fp = TMPFile();
+fp = TMPFile()
 def change_usb_state(vm, action, devices):
-    fp.write("""
-             <hostdev mode='subsystem' type='usb'>
-                <source>
-                  <vendor id='0x{}'/>
-                  <product id='0x{}'/>
-                </source>
-             </hostdev>
-            """.format(*devices.split(':')).encode())
+    fp.seek(0)
+    fp.truncate(0)
+    fp.write("""<hostdev mode='subsystem' type='usb'>
+                    <source>
+                    <vendor id='0x{}'/>
+                    <product id='0x{}'/>
+                    </source>
+                </hostdev>""".format(*devices.split(':')).encode())
+    fp.flush()
     return subprocess.call(['virsh', action+'-device', vm, fp.name])
 
 
@@ -29,4 +30,4 @@ def main(arguments):
     return 0
     
 if __name__ == "__main__":
-    return main(sys.argv[1::])
+    main(sys.argv[1::])
