@@ -2,15 +2,19 @@
 
 HUGEPAGES_NR=8600
 oldnr=0
+PATH=$PATH:/home/jknedlik/.scripts
 sh -c "echo $HUGEPAGES_NR >/proc/sys/vm/nr_hugepages"
 #try 10 times to allocate the memory for vm hugepages via memory pressure
 for i in {1..8} 
 do
 	echo "$HUGEPAGES_NR" >/proc/sys/vm/nr_hugepages
+	nr=$(cat /proc/sys/vm/nr_hugepages);
+	if [ $nr -lt $HUGEPAGES_NR ];then
+	break
+	fi
 	sleep 1
 done
 
-nr=$(cat /proc/sys/vm/nr_hugepages);
 if [ $nr -lt $HUGEPAGES_NR ];then
 	sh -c "echo 0 >/proc/sys/vm/nr_hugepages"
 	echo "could not get enough hugepages"
@@ -20,6 +24,6 @@ fi
 virsh net-start default &
 virsh start win11 
 doas -u jknedlik sh -c "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u jknedlik)/bus systemctl --user start liba"
-virtusbcontrol win11 attach 1e7d:2d5f 0853:0100
+virt-usbcontrol win11 attach 1e7d:2d5f 0853:0100
 
 
