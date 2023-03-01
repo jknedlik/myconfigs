@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+import sys
+import subprocess
+from tempfile import NamedTemporaryFile as TMPFile
+
+fp = TMPFile();
+def change_usb_state(vm, action, devices):
+    fp.write("""
+             <hostdev mode='subsystem' type='usb'>
+                <source>
+                  <vendor id='0x{}'/>
+                  <product id='0x{}'/>
+                </source>
+             </hostdev>
+            """.format(*devices.split(':')).encode())
+    return subprocess.call(['virsh', action+'-device', vm, fp.name])
+
+
+def run_usb_command(vm_name, action, *devices):
+    for device in devices:
+        fail = change_usb_state(vm_name, action, device)
+        if fail: print(f"[VMusb] {action}ing {devices} on {vm_name} failed")
+
+def main(arguments):
+    if len(arguments) <3 and arguments[1] not in ['attach','detach']:
+        print(f"[VMusb] invalid action: {arguments}")
+        return 1
+    run_usb_command(*arguments)
+    return 0
+    
+if __name__ == "__main__":
+    return main(sys.argv[1::])
