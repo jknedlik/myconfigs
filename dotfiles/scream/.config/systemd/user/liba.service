@@ -7,5 +7,5 @@ After=graphical-session-pre.target
 Environment=LIBASOUND_DEBUG=1
 Type=simple
 Restart=always
-ExecStart=scream -o pulseaudio -i virbr0 -v -u -p 4011
+ExecStart=/usr/local/bin/scream -o pulseaudio -i virbr0 -v -u -p 4011
 
