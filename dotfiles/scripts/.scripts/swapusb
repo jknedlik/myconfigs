@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/home/jknedlik/.scripts/virt-usbcontrol win11 attach 1e7d:2d5f 0853:0100
