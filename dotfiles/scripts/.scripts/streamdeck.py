@@ -63,7 +63,8 @@ def key_change_callback(deck, key_index, state):
 Key     =   namedtuple("Key",["name","icon","font",'image','func'])
 icon    =   f"{ASSETS_PATH}/Seraphine_Stage_Presence.png"
 font    =   "FreeMono.otf"
-keys    =   [generate_key('switch',icon,font,lambda:run_bash('./audiotogg.rb $HOST-sinks.json')),
+keys    =   [generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb')),
+             generate_key('switch inputs',icon,font,lambda:run_bash('./audiotogg.rb input')),
              generate_key('swapusb',icon,font,lambda:run_bash('./swapusb')),
              generate_key('reswapusb',icon,font,lambda:run_bash('./reswapusb')),
              generate_key('Exit',icon,font,exit)]
