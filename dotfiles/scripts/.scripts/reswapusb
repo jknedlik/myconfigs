@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-/home/jknedlik/.scripts/virt-usbcontrol win11 detach 1e7d:2d5f 0853:0100
+/home/jknedlik/.scripts/virt-usbcontrol win11 detach 1e7d:2d5f 1d50:6124

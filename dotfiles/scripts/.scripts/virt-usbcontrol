@@ -14,7 +14,7 @@ def change_usb_state(vm, action, devices):
                     </source>
                 </hostdev>""".format(*devices.split(':')).encode())
     fp.flush()
-    return subprocess.call(['virsh', action+'-device', vm, fp.name])
+    return subprocess.call(['doas','virsh', action+'-device', vm, fp.name])
 
 
 def run_usb_command(vm_name, action, *devices):
