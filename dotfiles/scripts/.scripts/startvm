@@ -24,6 +24,3 @@ fi
 virsh net-start default &
 virsh start win11 
 doas -u jknedlik sh -c "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u jknedlik)/bus systemctl --user start liba"
-virt-usbcontrol win11 attach 1e7d:2d5f 0853:0100
-
-
