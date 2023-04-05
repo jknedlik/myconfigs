@@ -7,5 +7,5 @@ After=graphical-session-pre.target
 [Service]
 Type=simple
 Restart=always
-ExecStart=persway -a -o 100 
+ExecStart=/usr/bin/persway -a
 
