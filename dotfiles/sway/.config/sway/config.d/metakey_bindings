@@ -5,7 +5,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec "PINENTRY_USER_DATA=tty alacritty"
 # start a hovering terminal
 bindsym $mod+Shift+Return exec alacritty --title="Hovering execute Terminal"
 
@@ -13,7 +13,7 @@ bindsym $mod+Shift+Return exec alacritty --title="Hovering execute Terminal"
 bindsym $mod+x exec killall -SIGUSR1 waybar
 # dlauncher
 bindsym $mod+d exec alacritty --title="DLauncher" -e sh -c 'find /usr/share/applications -name *.desktop | xargs basename -s .desktop -a|fzf|xargs -r swaymsg -t command exec gtk-launch'
-bindsym $mod+p exec alacritty --title="FZF pass" -e sh -c "find ~/.password-store -type f|uniq |grep -v '.git' | cut -d'/' -f5-| sed -r -e 's/(.*).gpg/\1/g' | fzf| xargs -I{} pass show {}|wl-copy"
+bindsym $mod+p exec alacritty --title="FZF pass" -e sh -c "PINENTRY_USER_DATA=tty find ~/.password-store -type f|uniq |grep -v '.git' | cut -d'/' -f5-| sed -r -e 's/(.*).gpg/\1/g' | fzf| xargs -I{} pass show {}|wl-copy"
 #bindsym $mod+o exec alacritty --title="DLauncher" --name=launcher -e fzf~| xargs -r swaymsg -t command exec alacritty  -e bash -c cd 
 # qtbrowser
 bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" qutebrowser
