@@ -13,10 +13,10 @@ bindsym $mod+Shift+Return exec alacritty --title="Hovering execute Terminal"
 bindsym $mod+x exec killall -SIGUSR1 waybar
 # dlauncher
 bindsym $mod+d exec alacritty --title="DLauncher" -e sh -c 'find /usr/share/applications -name *.desktop | xargs basename -s .desktop -a|fzf|xargs -r swaymsg -t command exec gtk-launch'
-bindsym $mod+p exec alacritty --title="FZF pass" -e sh -c "PINENTRY_USER_DATA=tty find ~/.password-store -type f|uniq |grep -v '.git' | cut -d'/' -f5-| sed -r -e 's/(.*).gpg/\1/g' | fzf| xargs -I{} pass show {}|wl-copy"
+bindsym $mod+p exec alacritty --title="FZF pass" -e sh -c 'PINENTRY_USER_DATA=tty pass show --clip=1 $(find ~/.password-store -type f|uniq |grep -v ".git" | cut -d"/" -f5-| sed -r -e "s/(.*).gpg/\1/g" | fzf) >/dev/null'
 #bindsym $mod+o exec alacritty --title="DLauncher" --name=launcher -e fzf~| xargs -r swaymsg -t command exec alacritty  -e bash -c cd 
 # qtbrowser
-bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" qutebrowser
+bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" PINENTRY_USER_DATA="" qutebrowser
 # grim
 bindsym $mod+g exec grim -t png ~/screenshots/$(date +%Y-%m-%d_%H-%m).png l& notify-send -t 1000 "captured screenshot " && gthumb ~/screenshots/$(date +%Y-%m-%d_%H-%m).png
 
