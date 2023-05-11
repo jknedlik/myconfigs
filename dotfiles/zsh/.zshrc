@@ -66,6 +66,8 @@ alias virgo="ssh virgo"
 alias kronos="ssh kronos"
 alias r=ranger
 alias v=vagrant
+alias vp="vagrant provision"
+alias vd="vagrant destroy -f"
 alias rcd="source ranger"
 alias userctl="systemctl --user"
 alias signal="scli -n -e vim -s -f -N \"$nfsend\""
@@ -120,4 +122,4 @@ d='dirs -v | head -10'
 export PATH=$PATH:~/.local/bin
 #setopt autocd autopushd \ pushdignoredups
 # let pinentry auto decide to use a terminal pinentry command
-export PINENTRY_USER_DATA="tty"
+#export PINENTRY_USER_DATA="tty"
