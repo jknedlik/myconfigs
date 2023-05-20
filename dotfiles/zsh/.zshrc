@@ -30,6 +30,7 @@ source ${ZDOTDIR:-~}/.zephyr/zephyr.zsh
 
 bindkey "^[[3~" delete-char
 
+bindkey -v '^?' backward-delete-char
 
 # User configuration
 
