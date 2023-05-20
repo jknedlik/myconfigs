@@ -91,10 +91,10 @@ def fill_key_black(key_index):
 
 def update_key_images():
     for i in range(6):
-        if i<=len(keys)-1:
-            update_key_image(i)
-        else:
+        if i>=len(keys):
             fill_key_black(i)
+        else:
+            update_key_image(i)
 
 ##########################################################################################################
 Key     =   namedtuple("Key",["name","icon","font",'image','func'])
