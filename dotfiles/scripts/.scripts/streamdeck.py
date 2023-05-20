@@ -65,7 +65,7 @@ icon    =   f"{ASSETS_PATH}/Seraphine_Stage_Presence.png"
 font    =   "FreeMono.otf"
 keys    =   [generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb')),
              generate_key('switch inputs',icon,font,lambda:run_bash('./audiotogg.rb input')),
-             generate_key('mumble',icon,font,lambda:run_bash('mumble mumble://Cclear@mumble.9009l3.de:64738/LeWhite/Gammeln/ 1')),
+             generate_key('mumble',icon,font,lambda:run_bash('userctl start lewhite')),
              generate_key('swapusb',icon,font,lambda:run_bash('./swapusb')),
              generate_key('reswapusb',icon,font,lambda:run_bash('./reswapusb')),
              generate_key('Exit',icon,font,exit)]
