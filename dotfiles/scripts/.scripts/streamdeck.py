@@ -100,14 +100,14 @@ def update_key_images():
 Key     =   namedtuple("Key",["name","icon","font",'image','func'])
 icon    =   f"{ASSETS_PATH}/Seraphine_Stage_Presence.png"
 font    =   "FreeMono.otf"
-keys    =   [generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb')),
-             generate_key('switch inputs',icon,font,lambda:run_bash('./audiotogg.rb input')),
-             generate_key('mumble',icon,font,lambda:run_bash('systemctl --user is-active lewhite && systemctl --user stop lewhite || systemctl --user start lewhite')),
-             generate_key('swapusb2',icon,font,lambda:run_bash('./swapusb')),
-             Menu("music",icon,font,[
-                generate_key(' outxx',icon,font,lambda:run_bash('./audiotogg.rb')),
-                generate_key(' inputs',icon,font,lambda:run_bash('./audiotogg.rb input'))]),
-             generate_key('Exit',icon,font,exit)]
+keys    =   [
+             generate_key('usb2win',icon,font,lambda:run_bash('./swapusb')),
+             generate_key('Mumble',icon,font,lambda:run_bash('systemctl --user is-active lewhite && systemctl --user stop lewhite || systemctl --user start lewhite')),
+             generate_key('Exit',icon,font,exit),
+             generate_key('usb2linux',icon,font,lambda:run_bash('./reswapusb')),
+             Menu("Audio",icon,font,[
+                generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb')),
+                generate_key('switch inputs',icon,font,lambda:run_bash('./audiotogg.rb input'))])]
 
 if __name__ == "__main__":
     try:
