@@ -59,6 +59,43 @@ def key_change_callback(deck, key_index, state):
     if state: #check if pressed
         keys[key_index].func()
 
+old=[]
+class Back:
+    def func(self):
+        global keys
+        keys=old.pop()
+        update_key_images()
+    def __init__(self):
+        self.keys   = keys
+        self.name   = "back"
+        self.icon   = f"{ASSETS_PATH}/Seraphine_Stage_Presence.png"
+        self.font   = "FreeMono.otf"
+        self.image  = render_key_image(deck,self.icon,self.font,self.name)
+
+class Menu:
+    def func(self):
+        global keys
+        old.append(keys)
+        keys=self.list+[Back()]
+        update_key_images()
+
+    def __init__(self,name,icon,font,lst):
+        self.list   = lst
+        self.name   = name
+        self.image  = render_key_image(deck,icon,font,name)
+
+black=PILHelper.to_native_format(deck, Image.new("RGB", (200,200), (0)))
+def fill_key_black(key_index):
+    with deck: #thread acquire streamdeck
+        deck.set_key_image(key_index,black)
+
+def update_key_images():
+    for i in range(6):
+        if i<=len(keys)-1:
+            update_key_image(i)
+        else:
+            fill_key_black(i)
+
 ##########################################################################################################
 Key     =   namedtuple("Key",["name","icon","font",'image','func'])
 icon    =   f"{ASSETS_PATH}/Seraphine_Stage_Presence.png"
@@ -74,8 +111,7 @@ if __name__ == "__main__":
     try:
         deck.open()
         deck.set_brightness(80)
-        for i in range(len(keys)):
-            update_key_image(i)
+        update_key_images()
 
         # Register callback function for when a key state changes.
         deck.set_key_callback(key_change_callback)
