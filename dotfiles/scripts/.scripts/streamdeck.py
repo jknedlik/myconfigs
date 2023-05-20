@@ -103,8 +103,10 @@ font    =   "FreeMono.otf"
 keys    =   [generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb')),
              generate_key('switch inputs',icon,font,lambda:run_bash('./audiotogg.rb input')),
              generate_key('mumble',icon,font,lambda:run_bash('systemctl --user is-active lewhite && systemctl --user stop lewhite || systemctl --user start lewhite')),
-             generate_key('swapusb',icon,font,lambda:run_bash('./swapusb')),
-             generate_key('reswapusb',icon,font,lambda:run_bash('./reswapusb')),
+             generate_key('swapusb2',icon,font,lambda:run_bash('./swapusb')),
+             Menu("music",icon,font,[
+                generate_key(' outxx',icon,font,lambda:run_bash('./audiotogg.rb')),
+                generate_key(' inputs',icon,font,lambda:run_bash('./audiotogg.rb input'))]),
              generate_key('Exit',icon,font,exit)]
 
 if __name__ == "__main__":
