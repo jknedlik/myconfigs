@@ -128,7 +128,6 @@ if __name__ == "__main__":
         print(f"Exception: {e}")
         pass
     finally:
-        with deck:
-            deck.close()
+        exit()
 
 
