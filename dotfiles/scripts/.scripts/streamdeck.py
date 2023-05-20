@@ -16,7 +16,7 @@ deck = DeviceManager().enumerate()[0]
 
 def run_bash(command):
     try:
-        proc=Popen(command.split(' '),stdout=PIPE,stderr=PIPE)
+        proc=Popen(command,stdout=PIPE,stderr=PIPE,shell=True)
         stdout,stderr=proc.communicate()
         print(stdout.decode(),stderr.decode())
     except BaseException as e:
