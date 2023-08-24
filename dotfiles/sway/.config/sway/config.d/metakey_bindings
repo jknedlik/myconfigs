@@ -17,6 +17,7 @@ bindsym $mod+p exec alacritty --title="FZF pass" -e sh -c 'PINENTRY_USER_DATA=tt
 #bindsym $mod+o exec alacritty --title="DLauncher" --name=launcher -e fzf~| xargs -r swaymsg -t command exec alacritty  -e bash -c cd 
 # qtbrowser
 bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" PINENTRY_USER_DATA="" qutebrowser
+bindsym $mod+z exec swaylock -c '#000000'
 # grim
 bindsym $mod+g exec grim -t png ~/screenshots/$(date +%Y-%m-%d_%H-%m).png l& notify-send -t 1000 "captured screenshot " && gthumb ~/screenshots/$(date +%Y-%m-%d_%H-%m).png
 
