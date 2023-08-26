@@ -9,13 +9,9 @@ end
 
 def nextdevice(devicehash,key)
   devices           = devicehash.keys()
-  print(devices)
   index             = devices.find_index{|elem| elem.include?(key)}
-  print "\n",key, index,"\n"
-  next_index = (index.nil? ? 0 : index+1) % devices.length
+  next_index        = (index.nil? ? 0 : index+1) % devices.length
   next_device_name  = devices[next_index]
-  print "next index",next_index,"device length",devices.length,"devicename:",next_device_name,"\n"
-
   return next_device_name
 end
 
