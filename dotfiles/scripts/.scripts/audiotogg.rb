@@ -19,30 +19,20 @@ def nextdevice(devicehash,key)
   return next_device_name
 end
 
-def find_assigned_targets(configured_devices,target)
-  targets={}
-  configured_devices.each do |device,name| 
-    targets[`pactl list short #{target}s |grep #{device}`.split(" ")[0]]  = name
-  end
-  targets.delete_if {|k,v| k==nil}
-  return targets
-end
-
-###check input
+### check input
 abort("either choose input or output") if ARGV.length==0 
 if not ["input","output"].include?ARGV[0] then abort("'#{ARGV[0]}' not viable, either choose input or output") end
 target, io              = ARGV[0]=="output"? ["sink","output"] : ["source","input"]
 
-### main
+### calculate next device
 configured_devices      = parse_device_config("#{`hostname`.split(" ")[0]}-sinks.json")["#{io}"]
-assigned_targets        = find_assigned_targets(configured_devices,target)
 default_target_name     = `pactl info|grep -i "Default #{target}"`.split()[2]
 default_target_id       = `pactl list short #{target}s |grep "#{default_target_name}"`.split(" ")[0]
 next_device_name        = nextdevice(configured_devices,default_target_name)
 next_device_id          = `pactl list short #{target}s |grep "#{next_device_name}"`.split(" ")[0]
-puts("\ncurrent #{target}: #{default_target_name}\n next: #{next_device_name}")
-puts("\ncurrent #{target}: #{configured_devices[default_target_name]} \nnext: #{configured_devices[next_device_name]}")
-puts("move all and default target(s) to #{next_device_id}")
+puts("\ncurrent #{configured_devices[default_target_name]} -> next: #{configured_devices[next_device_name]}")
+puts("move all and default target(s) to#{next_device_id}")
 
+### spawn notification and set default target
 Process.spawn("notify-send -t 3000 \"🎶#{target=="output" ? "<-" : "->"} #{configured_devices[next_device_name]}\"")
 Process.spawn("pactl set-default-#{target} #{next_device_id}")
