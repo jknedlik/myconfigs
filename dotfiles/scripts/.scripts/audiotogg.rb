@@ -1,27 +1,48 @@
 #!/usr/bin/env ruby
 require 'json'
 
-cmd={"target" => "sink", "io"=>'input'}
-cmd={"target"=>"source", "io"=>'output'} if ARGV.length>0
-HASH={}
-def nextk(key)
-  return HASH.flatten[(HASH.flatten.index(key)+2)%HASH.flatten.length]
-end
-s=File.read("#{`hostname`.split(" ")[0]}-sinks.json")
 
-JSON.parse(s)["#{cmd['target']}s"].each do |sink| 
-  HASH[`pactl list short #{cmd['target']}s |grep #{sink[0]}`.split(" ")[0]]=sink[1]
+def parse_device_config(filename)
+  s=File.read(filename)
+  return JSON.parse(s) 
 end
-puts("list:\" #{HASH} \"")
-allTargets=`pactl list short #{cmd['target']}-#{cmd['io']}s`.split("\n")
-HASH.delete_if {|k,v| k==nil}
-defaultName=`pactl info|grep -i "Default #{cmd['target']}"`.split()[2]
-current=`pactl list short #{cmd['target']}s |grep "#{defaultName}"`.split(" ")[0]
-target=(HASH.keys.include? current)? nextk(current) : HASH.flatten[0]
-puts("current #{cmd['target']}: #{current} next: #{target}")
-puts("move currentk and default target to #{target}")
-Process.spawn("notify-send -t 3000 \"switch 🎶 \n#{HASH[target]}\"")
-Process.spawn("pactl set-default-#{cmd['target']} #{target}")
-for x in allTargets do
-  Process.spawn("pactl move-#{cmd['target']}-#{cmd['io']} #{x.split(" ")[0]} #{target}")
+
+def nextdevice(devicehash,key)
+  devices           = devicehash.keys()
+  print(devices)
+  index             = devices.find_index{|elem| elem.include?(key)}
+  print "\n",key, index,"\n"
+  next_index = (index.nil? ? 0 : index+1) % devices.length
+  next_device_name  = devices[next_index]
+  print "next index",next_index,"device length",devices.length,"devicename:",next_device_name,"\n"
+
+  return next_device_name
 end
+
+def find_assigned_targets(configured_devices,target)
+  targets={}
+  configured_devices.each do |device,name| 
+    targets[`pactl list short #{target}s |grep #{device}`.split(" ")[0]]  = name
+  end
+  targets.delete_if {|k,v| k==nil}
+  return targets
+end
+
+###check input
+abort("either choose input or output") if ARGV.length==0 
+if not ["input","output"].include?ARGV[0] then abort("'#{ARGV[0]}' not viable, either choose input or output") end
+target, io              = ARGV[0]=="output"? ["sink","output"] : ["source","input"]
+
+### main
+configured_devices      = parse_device_config("#{`hostname`.split(" ")[0]}-sinks.json")["#{io}"]
+assigned_targets        = find_assigned_targets(configured_devices,target)
+default_target_name     = `pactl info|grep -i "Default #{target}"`.split()[2]
+default_target_id       = `pactl list short #{target}s |grep "#{default_target_name}"`.split(" ")[0]
+next_device_name        = nextdevice(configured_devices,default_target_name)
+next_device_id          = `pactl list short #{target}s |grep "#{next_device_name}"`.split(" ")[0]
+puts("\ncurrent #{target}: #{default_target_name}\n next: #{next_device_name}")
+puts("\ncurrent #{target}: #{configured_devices[default_target_name]} \nnext: #{configured_devices[next_device_name]}")
+puts("move all and default target(s) to #{next_device_id}")
+
+Process.spawn("notify-send -t 3000 \"🎶#{target=="output" ? "<-" : "->"} #{configured_devices[next_device_name]}\"")
+Process.spawn("pactl set-default-#{target} #{next_device_id}")

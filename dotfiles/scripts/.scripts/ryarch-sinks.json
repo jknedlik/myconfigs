@@ -1,10 +1,9 @@
-{"sinks":[
-	["Arctis_Pro_Wireless-00.stereo","Arctis Pro"],
-	["pci-0000_0c","Logitech"]
-],
- "sources":[
-
-	["alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo ","Samson Q2U"],
-	["alsa_input.usb-SteelSeries_Arctis_Pro_Wireless-00.mono-chat ","Arctis Pro"]
- ]
+{"output":{
+	"alsa_output.usb-SteelSeries_Arctis_Pro_Wireless-00.stereo-game":"Arctis Pro",
+	"alsa_output.pci-0000_0c_00.4.analog-stereo":"Logitech"
+ },
+ "input":{
+	"alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo":"Samson Q2U",
+	"alsa_input.usb-SteelSeries_Arctis_Pro_Wireless-00.mono-chat":"Arctis Pro"
+ }
 }
