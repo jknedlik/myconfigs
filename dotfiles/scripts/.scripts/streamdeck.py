@@ -106,7 +106,7 @@ keys    =   [
              generate_key('Exit',icon,font,exit),
              generate_key('usb2linux',icon,font,lambda:run_bash('./reswapusb && swaymsg "output HDMI-A-1 dpms on"')),
              Menu("Audio",icon,font,[
-                generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb')),
+                generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb output')),
                 generate_key('switch inputs',icon,font,lambda:run_bash('./audiotogg.rb input'))])]
 
 if __name__ == "__main__":
