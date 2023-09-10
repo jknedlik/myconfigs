@@ -104,6 +104,7 @@ keys    =   [
              generate_key('usb2win',icon,font,lambda:run_bash('./swapusb && swaymsg "output HDMI-A-1 dpms off"')),
              generate_key('Mumble',icon,font,lambda:run_bash('systemctl --user is-active lewhite && systemctl --user stop lewhite || systemctl --user start lewhite')),
              generate_key('Exit',icon,font,exit),
+             generate_key('start vm',icon,font,lambda:run_bash("virsh start win11")),
              generate_key('usb2linux',icon,font,lambda:run_bash('./reswapusb && swaymsg "output HDMI-A-1 dpms on"')),
              Menu("Audio",icon,font,[
                 generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb output')),
