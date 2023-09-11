@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require 'json'
 
-
 def parse_device_config(filename)
   s=File.read(filename)
   return JSON.parse(s) 
@@ -23,7 +22,6 @@ target, io              = ARGV[0]=="output"? ["sink","output"] : ["source","inpu
 ### calculate next device
 configured_devices      = parse_device_config("#{`hostname`.split(" ")[0]}-sinks.json")["#{io}"]
 default_target_name     = `pactl info|grep -i "Default #{target}"`.split()[2]
-default_target_id       = `pactl list short #{target}s |grep "#{default_target_name}"`.split(" ")[0]
 next_device_name        = nextdevice(configured_devices,default_target_name)
 next_device_id          = `pactl list short #{target}s |grep "#{next_device_name}"`.split(" ")[0]
 puts("\ncurrent #{configured_devices[default_target_name]} -> next: #{configured_devices[next_device_name]}")
