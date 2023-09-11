@@ -101,14 +101,18 @@ Key     =   namedtuple("Key",["name","icon","font",'image','func'])
 icon    =   f"{ASSETS_PATH}/Seraphine_Stage_Presence.png"
 font    =   "FreeMono.otf"
 keys    =   [
-             generate_key('usb2win',icon,font,lambda:run_bash('./swapusb && swaymsg "output HDMI-A-1 dpms off"')),
-             generate_key('Mumble',icon,font,lambda:run_bash('systemctl --user is-active lewhite && systemctl --user stop lewhite || systemctl --user start lewhite')),
-             generate_key('Exit',icon,font,exit),
-             generate_key('start vm',icon,font,lambda:run_bash("virsh start win11")),
-             generate_key('usb2linux',icon,font,lambda:run_bash('./reswapusb && swaymsg "output HDMI-A-1 dpms on"')),
+             Menu("Win 11 VM",icon,font,[
+                generate_key('start',icon,font,lambda:run_bash("virsh start win11")),
+                generate_key('stop',icon,font,lambda:run_bash("virsh shutdown win11")),
+                generate_key('reboot',icon,font,lambda:run_bash("virsh reboot win11")),
+                generate_key('usb2win',icon,font,lambda:run_bash('./swapusb && swaymsg "output HDMI-A-1 dpms off"')),
+                generate_key('usb2linux',icon,font,lambda:run_bash('./reswapusb && swaymsg "output HDMI-A-1 dpms on"'))]),
              Menu("Audio",icon,font,[
                 generate_key('switch outputs',icon,font,lambda:run_bash('./audiotogg.rb output')),
-                generate_key('switch inputs',icon,font,lambda:run_bash('./audiotogg.rb input'))])]
+                generate_key('switch inputs',icon,font,lambda:run_bash('./audiotogg.rb input'))]),
+             generate_key('Mumble',icon,font,lambda:run_bash('systemctl --user is-active lewhite && systemctl --user stop lewhite || systemctl --user start lewhite')),
+             generate_key('Exit',icon,font,exit)
+             ]
 
 if __name__ == "__main__":
     try:
