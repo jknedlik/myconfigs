@@ -41,12 +41,7 @@
         },
         "on-click": "pavucontrol"
     },
-   "custom/watson_name": {
-     "format":"{}",
-     "interval": 9999,
-     "exec": "echo master",
-     "exec-if": "which watson"
-},
+
    "custom/watson_current": {
      "format":"{}",
      "interval": 1,
