@@ -3,9 +3,11 @@ c.backend = 'webengine'
 c.fonts.default_size = "20px"
 c.editor.command = ["alacritty","-e","sh","-c","sleep 0.1 && vim {}"]
 c.bindings.commands["normal"]={
-',p': 'spawn --userscript qute-pass --dmenu-invocation dmenu',
+'gp':  'set content.proxy "socks5://localhost:8787"',
+'gpr': 'set content.proxy ""',
 'e': 'edit-text',
 'E': 'edit-text ;; later 1000 fake-key <Ctrl-Enter>',
+',p': 'spawn --userscript qute-pass --dmenu-invocation dmenu ',
 ',P': 'spawn --userscript qute-pass --dmenu-invocation dmenu --password-only',
 '<Ctrl-Shift-y>':'hint links spawn --detach mpv --force-window yes {hint-url}',
 ';m': 'hint links spawn mpv {hint-url}'}
