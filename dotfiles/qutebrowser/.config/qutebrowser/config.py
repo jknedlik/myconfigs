@@ -4,7 +4,7 @@ c.fonts.default_size = "20px"
 c.editor.command = ["alacritty","-e","sh","-c","sleep 0.1 && vim {}"]
 c.bindings.commands["normal"]={
 'gp':  'set content.proxy "socks5://localhost:8787"',
-'gpr': 'set content.proxy ""',
+',gp': 'set content.proxy ""',
 'e': 'edit-text',
 'E': 'edit-text ;; later 1000 fake-key <Ctrl-Enter>',
 ',p': 'spawn --userscript qute-pass --dmenu-invocation dmenu ',
