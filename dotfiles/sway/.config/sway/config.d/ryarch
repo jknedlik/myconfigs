@@ -4,3 +4,10 @@ output DP-1 transform 270
 #output DP-3 disable
 bindsym $mod+Shift+t exec cd ~/.scripts && audiotogg.rb
 font Source Code Pro 19
+#TODO fix in audiotogg.rb script
+exec_always cd ~/.scripts && audiotogg.rb output
+exec_always cd ~/.scripts && audiotogg.rb input
+exec_always cd ~/.scripts && sleep 1 && audiotogg.rb output
+exec_always cd ~/.scripts && sleep 1 && audiotogg.rb input
+exec_always cd ~/.scripts && sleep 2 && audiotogg.rb input
+exec_always cd ~/.scripts && sleep 3 && audiotogg.rb input
