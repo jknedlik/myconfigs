@@ -20,6 +20,7 @@ bindsym $mod+b exec QT_WAYLAND_FORCE_DPI="" PINENTRY_USER_DATA="" qutebrowser
 bindsym $mod+z exec swaylock -c '#000000'
 # grim
 bindsym $mod+g exec grim  -g "$(slurp)" - | wl-copy && notify-send -t 1000 "screenshot > clipboard" 
+bindsym $mod+Shift+g exec  grim -g "$(slurp)" > ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send -t 1000 "-> ~/screenshot" 
 
 # test alacritty
 # kill focused window
