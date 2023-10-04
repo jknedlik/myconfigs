@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-running=`watson status -p |grep master`.chop
-if running=="master" ; then 
-out=`watson stop`
-else
-out=`watson start master`
-end
