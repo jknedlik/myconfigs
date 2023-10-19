@@ -56,7 +56,6 @@ fi
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
-export WLR_DRM_DEVICES=/dev/dri/card0
 export PATH=$PATH:/$HOME/.scripts
 export LC_ALL="en_US.UTF-8" 
 export nfsend="notify-send '%s -%m' -c im.received && paplay /usr/share/sounds/gnome/default/alerts/sonar.ogg"
@@ -124,3 +123,5 @@ export PATH=$PATH:~/.local/bin
 #setopt autocd autopushd \ pushdignoredups
 # let pinentry auto decide to use a terminal pinentry command
 #export PINENTRY_USER_DATA="tty"
+# if nvidia card
+#export WLR_DRM_DEVICES=/dev/dri/card0 
