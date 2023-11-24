@@ -71,4 +71,4 @@ colors:
     cyan:    '0x26a69a'
     white:   '0xcc7fe1'
   key_binding:
-    - {key: Tab, mods: Shift, action: ToggleViModex}
+    - {key: Tab, mods: Shift, action: ToggleViMode}
