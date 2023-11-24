@@ -112,5 +112,5 @@ inoremap <c-v>  <Plug>(fakeclip-p)
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
+set clipboard+=unnamedplus
 call vundle#end()
