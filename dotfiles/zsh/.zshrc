@@ -28,6 +28,10 @@ plugins=(
 # source zephyr
 source ${ZDOTDIR:-~}/.zephyr/zephyr.zsh
 
+# activate autocompletion
+autoload -Uz compinit
+compinit
+
 bindkey "^[[3~" delete-char
 
 bindkey -v '^?' backward-delete-char
