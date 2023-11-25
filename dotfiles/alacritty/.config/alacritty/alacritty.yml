@@ -53,6 +53,7 @@ colors:
   bright:
     black:   '0x636363'
     red:     '0xbc5653'
+
     green:   '0x909d63'
     yellow:  '0xebc17a'
     blue:    '0x7eaac7'
@@ -70,5 +71,7 @@ colors:
     magenta: '0xcb2020'
     cyan:    '0x26a69a'
     white:   '0xcc7fe1'
-  key_binding:
-    - {key: Tab, mods: Shift, action: ToggleViMode}
+
+key_bindings:
+  - {key: Tab,      mods: Shift,         action: ToggleViMode}
+  - {key: Return,   mods: Control|Shift, action: SpawnNewInstance }
