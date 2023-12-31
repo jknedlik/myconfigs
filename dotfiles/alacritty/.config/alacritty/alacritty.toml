@@ -1,0 +1,77 @@
+[colors.bright]
+black = "0x636363"
+blue = "0x7eaac7"
+cyan = "0x86d3ce"
+green = "0x909d63"
+magenta = "0xaa6292"
+red = "0xbc5653"
+white = "0xf7f7f7"
+yellow = "0xebc17a"
+
+[colors.cursor]
+cursor = "0x000000"
+text = "0x2c2c2c"
+
+[colors.dim]
+black = "0x37474f"
+blue = "0xc618c1"
+cyan = "0x26a69a"
+green = "0xcf326f"
+magenta = "0xcb2020"
+red = "0xffa74d"
+white = "0xcc7fe1"
+yellow = "0xffa000"
+
+[colors.normal]
+black = "0x263238"
+blue = "0x3285da"
+cyan = "0x90b6a8"
+green = "0x8bc34a"
+magenta = "0xe91e63"
+red = "0xff3800"
+white = "0x8c7fb1"
+yellow = "0xefc107"
+
+[colors.primary]
+background = "0x202020"
+bright_background = "0x3a3a3a"
+bright_foreground = "0xd9d9d9"
+dim_background = "0x202020"
+dim_foreground = "0xdbdbdb"
+foreground = "0xdddddd"
+
+[font]
+size = 12
+
+[font.bold]
+family = "Droid Sans Mono for Powerline"
+style = "Bold"
+
+[font.bold_italic]
+family = "Droid Sans Mono for Powerline"
+style = "Bold Italic"
+
+[font.italic]
+family = "Droid Sans Mono for Powerline"
+style = "Italic"
+
+[font.normal]
+family = "Droid Sans Mono for Powerline"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Tab"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[scrolling]
+history = 20000
+multiplier = 3
+
+[window]
+opacity = 0.8
