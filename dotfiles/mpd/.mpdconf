@@ -78,7 +78,7 @@ user				"jknedlik"
 # This setting can deny access to control of the daemon.
 #
 # For network
-bind_to_address		"127.0.0.1"
+bind_to_address		"192.168.178.20"
 #
 # And for Unix Socket
 #bind_to_address		"~/.mpd/socket"
@@ -168,10 +168,11 @@ follow_inside_symlinks		"yes"
 # can setting can be specified multiple times for different password profiles.
 #
 #password                        "password@read,add,control,admin"
+password                        "3241dfgj^,9@read,control"
 #
 # This setting specifies the permissions a user has who has not yet logged in. 
 #
-#default_permissions             "read,add,control,admin"
+#default_permissions             "read,add,control"
 #
 ###############################################################################
 
