@@ -168,7 +168,7 @@ follow_inside_symlinks		"yes"
 # can setting can be specified multiple times for different password profiles.
 #
 #password                        "password@read,add,control,admin"
-password                        "3241dfgj^,9@read,control"
+password                        "3241dfgj^,9@read,control,add"
 #
 # This setting specifies the permissions a user has who has not yet logged in. 
 #
