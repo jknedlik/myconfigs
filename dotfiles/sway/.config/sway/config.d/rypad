@@ -1,0 +1,13 @@
+bindsym $mod+Shift+c exec swaymsg "output * dpms off"
+bindsym $mod+c exec swaymsg "output * dpms on"
+
+bindsym $mod+Shift+Period exec brightnessctl set 80
+bindsym $mod+Shift+Comma exec brightnessctl set 5
+
+bindsym $mod+Equal exec brightnessctl -d tpacpi::kbd_backlight set 1+
+bindsym $mod+Minus exec brightnessctl -d tpacpi::kbd_backlight set 1-
+bindsym $mod+Shift+Equal exec brightnessctl set 15+
+bindsym $mod+Shift+Minus exec brightnessctl set 15-
+
+output eDP-1 resolution 2880 1800 scale 1.5
+bindsym $mod+Shift+t exec cd ~/.scripts && audiotogg.rb
