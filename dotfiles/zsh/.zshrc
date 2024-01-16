@@ -4,6 +4,21 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+ if [[ "${TERM}" != "" && "${TERM}" == "alacritty" ]]
+then
+    precmd()
+    {
+        print -Pn "\e]0; %~\a"
+    }
+
+    preexec()
+    {
+	curdir=$(echo $PWD | sed -r 's/\/home\/jknedlik/~/')
+	echo -en "\e]0; %~:${1}\a"
+    }
+fi
+
+setopt autocd
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
