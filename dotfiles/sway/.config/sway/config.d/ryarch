@@ -4,7 +4,7 @@ output DP-1 pos 2560 0 res 2560 1440
 #scale 1.5
 #output DP-3 disable
 bindsym $mod+Shift+t exec cd ~/.scripts && audiotogg.rb
-font Source Code Pro 19
+font Source Code Pro 8
 #TODO fix in audiotogg.rb script
 exec_always cd ~/.scripts && audiotogg.rb output
 exec_always cd ~/.scripts && audiotogg.rb input

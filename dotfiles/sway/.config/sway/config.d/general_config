@@ -1,6 +1,6 @@
 # general sway config
 #font
-font Source Code Pro 9
+font Source Code Pro 2
 #smart_gaps on
 #gaps outer 50
 #gaps inner 30
@@ -21,5 +21,5 @@ input 7504:24868:Ultimate_Gadget_Laboratories_UHK_60_v2 {
 bar {
 	swaybar_command waybar
 }
-# persway demon (AUR)
-exec /usr/bin/persway daemon -w -e '[tiling] opacity 1' -f '[tiling] opacity 0.95; opacity 1' -l 'mark --add _prev' --default-layout spiral &
+# autotiling demon (aur)
+exec_always autotiling -l 3
