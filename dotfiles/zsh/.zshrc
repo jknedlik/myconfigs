@@ -14,7 +14,7 @@ then
     preexec()
     {
 	curdir=$(echo $PWD | sed -r 's/\/home\/jknedlik/~/')
-	echo -en "\e]0; %~:${1}\a"
+	echo -en "\e]0; $curdir >${1}\a"
     }
 fi
 
