@@ -67,6 +67,11 @@ action = "SpawnNewInstance"
 key = "Return"
 mods = "Control|Shift"
 
+[[keyboard.bindings]]
+action = "Paste"
+key = "p"
+mods = "Control"
+
 [scrolling]
 history = 20000
 multiplier = 3
