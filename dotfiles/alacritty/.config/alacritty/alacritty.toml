@@ -9,8 +9,8 @@ white = "0xf7f7f7"
 yellow = "0xebc17a"
 
 [colors.cursor]
-cursor = "0x000000"
-text = "0x2c2c2c"
+cursor = "0xaaaaaa"
+text = "0x660066"
 
 [colors.dim]
 black = "0x000000"
