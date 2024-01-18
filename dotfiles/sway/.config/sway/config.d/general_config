@@ -23,3 +23,4 @@ bar {
 }
 # autotiling demon (aur)
 exec_always autotiling -l 3
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK

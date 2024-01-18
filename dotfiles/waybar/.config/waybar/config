@@ -25,9 +25,7 @@
 	"interval": 1
     },
     "sway/window":{
-	"rotate": 270,
-	max-length: 10
-
+	"rotate": 270
     },
     "wlr/workspaces":{
 
