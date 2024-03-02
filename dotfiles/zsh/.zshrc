@@ -33,6 +33,7 @@ plugins=(
 	syntax-highlighting
 	z
 	zsh-fzf-history-search
+	completion
 )
 
 ###### Zephyr-install und usage
