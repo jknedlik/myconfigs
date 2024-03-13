@@ -1,10 +1,14 @@
 #output DVI-D-1  pos 0 0 res 2560 1440
-output 'LG Electronics LG ULTRAGEAR+ 212NTSU9D670' pos 0 0 res 2560 1440
-output 'LG Electronics LG ULTRAGEAR+ 302NTMX2M067' pos 2560 0 res 2560 1440
-output  'Dell Inc. DELL P2421D 6KJKRH3' pos 5120 0 res 2560 1440
-output HDMI-A-1 pos 7680 0 mode 3840x2160@60
+output "LG Electronics LG ULTRAGEAR+ 212NTSU9D670" pos 0 0 res 2560 1440
+output "LG Electronics LG ULTRAGEAR+ 302NTMX2M067" pos 2560 0 res 2560 1440
+output "Dell Inc. DELL P2421D 6KJKRH3" pos 5120 0 res 2560 1440
+output HDMI-A-1 pos 7680 0 res 3840 2160
+#mode 3840x2160@30
 #scale 1.5
 #output DP-3 disable
+workspace 1 output "LG Electronics LG ULTRAGEAR+ 212NTSU9D670"
+workspace 2 output "LG Electronics LG ULTRAGEAR+ 302NTMX2M067" 
+workspace 3 output "Dell Inc. DELL P2421D 6KJKRH3"
 bindsym $mod+Shift+t exec cd ~/.scripts && audiotogg.rb
 font Source Code Pro 8
 exec systemctl --user start streamdeck
