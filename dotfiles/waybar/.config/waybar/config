@@ -49,7 +49,7 @@
     },
     "custom/win11vm": {
 	"exec": "~/.config/waybar/vm_virsh_recorder.sh win11",
-	"interval": 10,
+	"interval": 3,
 	"max-length": 3,
 	"exec if": "which virsh",
 	"return-type": "json"
