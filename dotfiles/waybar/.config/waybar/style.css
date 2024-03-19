@@ -85,3 +85,14 @@ window#waybar {
 #custom-watson_current{
     font-size: 80% ;
 }
+#custom-win11vm {
+}
+#custom-win11vm.shutoff {
+	color: rgba(255,0,0,0.5)
+}
+#custom-win11vm.paused {
+	color: rgba(255,255,255,0.5)
+}
+#custom-win11vm.running {
+	color: rgba(125,175,255,1.0)
+}

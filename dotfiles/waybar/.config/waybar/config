@@ -3,7 +3,7 @@
     "position": "right",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-        "modules-right": ["pulseaudio","cpu","memory", "tray","clock"],
+        "modules-right": ["custom/win11vm","pulseaudio","cpu","memory", "tray","clock"],
     "sway/window": {
         "max-length": 50
     },
@@ -46,5 +46,12 @@
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/win11vm": {
+	"exec": "~/.config/waybar/vm_virsh_recorder.sh win11",
+	"interval": 10,
+	"max-length": 3,
+	"exec if": "which virsh",
+	"return-type": "json"
     }
 }
