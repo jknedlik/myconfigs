@@ -52,6 +52,7 @@
 	"interval": 3,
 	"max-length": 3,
 	"exec if": "which virsh",
-	"return-type": "json"
+	"return-type": "json",
+	"on-click": "virt-manager --connect 'qemu:///system' --show-domain-editor win11"
     }
 }
